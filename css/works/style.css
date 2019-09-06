@@ -53,7 +53,7 @@ body{
  	content: '\f078';
  	font-family: fontAwesome;
  	line-height: 50px;
- 	color: red;
+ 	color: #fff;
  	right: -5px;
 }
  header nav ul li.active.sub-menu:before {
