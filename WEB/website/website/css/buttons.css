@@ -1,0 +1,68 @@
+#buttons {
+    height: 230px;
+    width: 50px;
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    z-index: 20;
+}
+
+.buttons {
+    position: absolute;
+    right: 18px; 
+    background-color: grey;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: 3px solid white;
+}
+
+.buttons:focus {
+    outline: none;
+    background-color: white;
+    border-color: black;
+}
+
+.buttons:hover {
+    background-color: white;
+    border-color: black;
+}
+
+#button1 {
+    top: 20px;
+}
+
+#button2 {
+    top: 45px;
+}
+
+#button3 {
+    top: 70px;
+}
+
+#button4 {
+    top: 95px;
+}
+
+#button5 {
+    top: 120px;
+}
+
+#button6 {
+    top: 145px;
+}
+
+#button7 {
+    top: 170px;
+}
+
+#button8 {
+    top: 195px;
+}
+
+
+
+#btn1 {
+    width: 200px;
+    margin-top: 100px;
+}

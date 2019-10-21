@@ -1,0 +1,151 @@
+.div1 {
+    height: 22px;
+    background-color: black;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+.div1:hover {
+    background-color: rgb(28, 28, 28);
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+#menu {
+    background-color: black;
+    width: 26.5%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 80px;
+    visibility: hidden;
+    z-index: 100;
+    position: fixed;
+}
+
+.menu_class1 {
+    position: absolute;
+    animation-name: burgerShow;
+    animation-duration: 0.8s;
+}
+
+.menu_class2 {
+    position: absolute;
+    animation-name: burgerStopShow;
+    animation-duration: 0.8s;
+}
+
+.div_class1 {
+    animation-name: listMove;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.div_class2 {
+    animation-name: listMove;
+    animation-duration: 1.05s;
+    animation-timing-function: ease-out;
+}
+
+.div_class3 {
+    animation-name: listMove;
+    animation-duration: 1.1s;
+    animation-timing-function: ease-out;
+}
+
+.div_class4 {
+    animation-name: listMove;
+    animation-duration: 1.15s;
+    animation-timing-function: ease-out;
+}
+
+.div_class5 {
+    animation-name: listMove;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+}
+
+.div_class6 {
+    animation-name: listMove;
+    animation-duration: 1.25s;
+    animation-timing-function: ease-out;
+}
+
+.div_class7 {
+    animation-name: listMove;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-out;
+}
+
+.div_class8 {
+    animation-name: listMove;
+    animation-duration: 1.35s;
+    animation-timing-function: ease-out;
+}
+
+.div_class9 {
+    animation-name: listMove;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-out;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+
+  @keyframes burgerShow {
+    from {
+        right: -600px;
+        opacity: 0;
+    }
+    to {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes burgerStopShow {
+    from {
+        right: 0px;
+        opacity: 1;
+    }
+    to {
+        right: -600px;
+        opacity: 0;
+    }
+}
+
+@keyframes listMove {
+    from {
+        padding-left: 300px;
+        opacity: 0;
+    }
+    to {
+        padding-left: 0px;
+        opacity: 1;
+    }
+}

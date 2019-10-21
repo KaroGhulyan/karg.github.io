@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Smart Calculator</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="author" content="Skander Blaity" />
+
+    <meta name="description" content="Smart Calculator" />
+
+    <link rel="stylesheet" href="css/calcul.css" />
+
+    <link rel="icon" href="img/Sc-icon.png" />
+
+    <script src="js/calcul.js"></script>
+  </head>
+
+  <body style="background-image: url('img/backg.jpg');">
+    <div id="Ads1">
+      <img src="img/Ads1.jpg" />
+    </div>
+
+    <div id="Calcul" align="center">
+      <fieldset align="center">
+        <input type="text" id="result" placeholder="0" readonly />
+
+        <table align="left" id="left">
+          <tr>
+            <td>
+              <input
+                type="submit"
+                id="sept"
+                value="7"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="8"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="9"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="4"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="5"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="6"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="1"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="2"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="3"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="."
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td colspan="2">
+              <input
+                type="submit"
+                value="0"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table align="left" id="centre">
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="÷"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td>
+              <input type="submit" value="⇚" class="bouton" onclick="Supp()" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="×"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="AC"
+                class="bouton"
+                onclick="SuppAll()"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="-"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td rowspan="2">
+              <input
+                type="submit"
+                value="="
+                class="bouton"
+                id="equal"
+                onclick="Egal()"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="+"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table align="left" id="right">
+          <tr>
+            <td>
+              <input type="submit" value="x²" class="bouton" onclick="Exp2()" />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="xⁿ"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="√x"
+                class="bouton"
+                onclick="Racine()"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="x!"
+                class="bouton"
+                onclick="Facto()"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="("
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value=")"
+                class="bouton"
+                onclick="Number(this.value)"
+              />
+            </td>
+
+            <td>
+              <input
+                type="submit"
+                value="(-)"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td>
+              <input type="submit" value="|x|" class="bouton" onclick="Abs()" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="submit"
+                value="%"
+                class="bouton"
+                onclick="Operator(this.value)"
+              />
+            </td>
+
+            <td>
+              <input type="submit" value="cos" class="bouton" onclick="Cos()" />
+            </td>
+
+            <td>
+              <input type="submit" value="sin" class="bouton" onclick="Sin()" />
+            </td>
+
+            <td>
+              <input type="submit" value="tan" class="bouton" onclick="Tan()" />
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="log" class="bouton" onclick="Log()" />
+            </td>
+
+            <td colspan="2">
+              <input type="submit" value="eⁿ" class="bouton" onclick="Expo()" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+
+    <div id="Ads2">
+      <img src="img/Ads1.jpg" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 700px;
+    border: 1px solid black;
+}
+.tetris{
+    width: 500px;
+    height: 900px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+}
+.excel{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+} 
+.figure, .set{
+    background-color: greenyellow;
+}

@@ -1,0 +1,19 @@
+.item-add-form button {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0px 15px 45px -9px rgba(0, 0, 0, 0.5);
+  color: black;
+  /* transform: scale(0); */
+  transition: 0.3s all ease-in-out;
+  border-radius: 5px;
+}
+.item-add-form button:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+}
+.item-add-form input {
+  margin-top: 10px;
+}

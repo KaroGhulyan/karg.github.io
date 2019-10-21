@@ -1,0 +1,80 @@
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 200;
+    background-color: black;
+}
+
+#list1 {
+    list-style: none;
+}
+
+main {
+    display: flex;
+    justify-content: flex-end;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    padding-left: 60px;
+}
+
+
+.ul1 {
+    width: 100%;
+    padding-left: 0px;
+}
+
+.li1 {
+    color: white;
+    list-style: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    z-index: 1200;
+}
+
+#logo {
+    height: 80px;
+}
+
+.container {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#div2 {
+    padding-top: 35vh;
+    padding-left: 50%;
+}
+
+#div3 {
+    padding-top: 32vh;
+    padding-left: 30%;
+}
+
+#div4 {
+    padding-left: 30%;
+}
+
+.image1 {
+    padding: 4px;
+    height: 18%;
+    width: 18%;
+}

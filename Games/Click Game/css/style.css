@@ -1,0 +1,30 @@
+body {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.output {
+  background-color: aquamarine;
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  overflow: hidden;
+  cursor: grab;
+}
+.message {
+  /* width: 100px; */
+  border: 1px solid;
+  background: red;
+  color: white;
+  font-size: 1rem;
+  width: 500px;
+}
+.circle {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
