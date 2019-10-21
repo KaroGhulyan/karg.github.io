@@ -1,0 +1,26 @@
+body{
+	margin: 0;
+	padding: 5%;
+}
+.header{
+	text-align: center;
+	color: #FE4321;
+}
+.main h1,h2{
+	color:#FE4321; 
+}
+.main #h1{
+	color: black;
+}
+.main #h2{
+	color: black;
+}
+.table h2{
+	color:#FE4321;
+}
+img{
+	width: 100%;
+}
+.main .about{
+	text-align: center;
+}

@@ -1,0 +1,88 @@
+
+
+.block-1
+{
+	text-align: center;
+}
+
+
+
+.block-1 .border
+{  
+	display: inline-block;
+   border: 10px solid ;
+   padding: 3%;
+   margin: 0 1%;
+   border-radius: 50%;
+   border-color: rgba(123, 148, 77, 0.66);
+
+}
+
+.block-1 .border p
+{
+	font-size: 3vh;
+	color: #7B944D;
+}
+.block-1 .border span
+{
+	font-size: 5vh;
+	font-weight: bold;
+	color: #7B944D;
+}
+
+
+.border:hover, .border:hover p ,.border:hover span
+{
+  border-color: #3F89B0;
+  color: #3F89B0;
+}
+/*-------------------------------------------------------------------------------------------*/
+
+.block-2
+{
+	text-align: center;
+}
+
+
+.pic:hover img
+{
+	border: 30px solid #3F89B0;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+.block-3
+{
+	text-align: center;
+}
+
+.block-3 .pic1 img
+{
+	border-radius: 50%;
+}
+
+.pic1:hover img
+{
+	opacity: 0.5;
+}
+/*----------------------------------------------------------------------------------------------*/
+
+.button1
+{
+	text-align: center;
+}
+
+.button1 .button a 
+{
+	text-decoration: none;
+	border: 1px solid;
+	padding: 15px 100px;
+	background-color: #9A0048;
+	color: white;
+}
+
+.button:hover a 
+{
+	background-color: white;
+	color:  #9A0048;
+	
+}

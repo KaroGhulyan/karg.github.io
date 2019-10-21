@@ -1,0 +1,99 @@
+
+#conteiners{
+	width: 500px;
+	height: 500px;
+	outline: 3px solid black;
+	position: relative;
+	display: inline-block;
+
+}
+#conteiners #red{
+	position: absolute;
+			top: 0px;
+			left: 0px;
+		width: 100px;
+		height: 100px;
+	 background-color:red;
+}
+#conteiners #green{
+	position: absolute;
+			top: 0px;
+			right: 0px;
+		width: 100px;
+		height: 100px;
+	 background-color:green;
+}
+#conteiners #blue{
+	position: absolute;
+			bottom: 0px;
+			right: 0px;
+		width: 100px;
+		height: 100px;
+	 background-color:blue;
+}
+#conteiners #purple{
+	position: absolute;
+			bottom: 0px;
+			left: 0px;
+		width: 100px;
+		height: 100px;
+	 background-color:purple;
+
+}
+#conteiners #ball{
+		position: absolute;
+		transform: translate(-50%,-50%);
+		top: 250px;
+		left: 250px;	
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: black;
+		transition:  0.5s;
+
+}
+#conteiners #life{
+	position: absolute;
+	font-weight: 700;
+	font-size: 50px;
+	top: 250px;
+	left: 250px;
+	transform: translate(-50%,-50%);
+	color: grey;
+	z-index: 50;
+	transition:  0.5s;
+
+}
+.btn{
+	background-color: grey;
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	margin-left: 100px;
+}
+.btn button:nth-child(1){
+	position: absolute;
+	padding: 20px;
+	top: 10%;
+	left: 40%;
+}
+.btn button:nth-child(2){
+	position: absolute;
+	padding: 20px;
+	bottom: 10%;
+	left: 40%;
+}
+.btn button:nth-child(3){
+	position: absolute;
+	padding: 20px;
+	top: 40%;
+	left: 10%;
+}
+.btn button:nth-child(4){
+	position: absolute;
+	padding: 20px;
+	top: 40%;
+	right: 10%;
+}
+

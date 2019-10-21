@@ -1,0 +1,13 @@
+		#color{
+			 border: 2px red solid;
+		};
+		#text{
+			border: 2px green solid;
+			font:
+		};
+		#hidden{
+			border: 2px blue solid;
+		};
+		#button{
+			text-align: center;
+		};

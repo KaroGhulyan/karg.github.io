@@ -1,0 +1,904 @@
+@font-face{
+	font-family: "arek-boldItalic";
+	src:url("․․/fonts/bolditalic/arek-boldItalic.eot");
+	src:url("․․/fonts/bolditalic/arek-boldItalic.eot?#iefix")format("eot"),
+	url("․․/fonts/bolditalic/arek-boldItalic.ttf")format("truetype"),
+	url("․․/fonts/bolditalic/arek-boldItalic.woff")format("woff");
+    
+}
+
+
+
+.top-block 
+  {
+     background-color: #66A83A;
+	color: #fff;
+	font-family: "arek-boldItalic" ,sans-serif;
+  }
+
+ .top-block a
+  { 
+	color: #fff; 
+	text-decoration: none;
+  }
+
+
+
+
+.top-block .contact-block
+	{
+		width: 40%;
+		display: inline-block;
+		padding: 10px;
+        outline: 0px solid;
+	}
+.top-block .menu1-block
+	{
+		width: 58%;
+		display: inline-block;
+		outline: 0px solid
+
+	}   
+
+
+                                    /*MARGINS*/
+
+.mdi-phone-in-talk
+					{
+						margin-right: 3px;
+						text-indent: 50px;
+					}
+.tel
+					{
+						margin-right: 12px;
+					}
+.call-back
+					{
+						margin: 12px;
+					}
+.mdi-email
+					{
+						margin: 3px;
+					}
+
+.news
+					{
+                       margin-right: 60px;
+					}
+.conditions
+					{
+					  margin-right: 60px;
+					}
+.shipping
+					{
+                      margin-right: 60px;
+					}
+.aboutus
+					{
+
+					}
+                         
+                          /*LOGO*/
+ 
+
+.logoinline
+{
+	outline: 0px solid;
+	padding: 0 0 20px 0;
+}
+.logoinline .logo1
+{
+	display: inline-block;
+	font-size:50px;
+	width: 25%;
+	text-indent: 70px;
+}
+.logoinline .search-form
+{
+  display: inline-block;
+  width: 50%;
+
+
+}
+.logoinline .search-form form input
+{
+	width: 70%;
+	padding: 10px;
+	
+    border: 1px solid;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: white;
+
+
+}
+.search-form  button
+{
+	font-size: 29px;
+	
+    border: 1px solid;
+    border-left: none;
+    position: absolute;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: white;
+    left: 912px;
+}
+
+.logoinline .icons1
+{
+  display: inline-block;
+  width: 24%;
+}
+.logoinline .icons1 .mdi-account-outline
+{
+   font-size: 30px;
+   margin-right: 30px;
+}
+
+.logoinline .icons1 .mdi-cart
+{
+  font-size: 30px;
+}
+
+
+
+
+                                         /*MENU2-BlOCK*/
+.menu-block1
+{
+  text-align: center;
+  width:100%;
+  
+
+  
+}
+.menu-block1 a
+{
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.menu-block1 .sections
+{
+   display: inline-block;
+   width: 10%;
+}
+.menu-block1 .sections a
+{
+	color: black;
+}
+.menu-block1 .brends 
+{
+   display: inline-block;
+   width: 10%;
+}
+.menu-block1 .brends a
+{
+	color: black;
+}
+
+.menu-block1 .sales
+{
+  display: inline-block;
+  width: 10%;
+
+}
+
+.menu-block1 .sales a
+{
+	color: red;
+}
+
+
+
+
+						                                /*BACKGROUNDS/IMAGE/TEXT*/
+
+
+.background 
+  { 
+
+	background-image: url(../img/img2.jpg);
+	height: 550px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+  }
+
+
+.background .background-text 
+	{ 
+     font-family: "arek-boldItalic", sans-serif;
+     width: 56%;
+     display: inline-block;
+     color: #fff;
+     outline: 0px solid;
+     vertical-align: top;
+     padding: 4%;
+     margin-top: 10%;
+
+	}
+		
+
+.background .background-text a
+{
+	color: #fff;
+
+	
+}
+
+
+.background .dog
+       {
+         width: 35%;
+         display: inline-block;
+         outline: 0px solid;
+         margin-top: 2%;
+
+
+       }
+
+
+
+
+.background .background-text .avelin
+{
+	text-align: center;
+}
+.background .background-text .avelin a
+{
+   border: 1px solid;
+   text-decoration: none;
+   padding: 10px 20px;
+   border-radius: 15px;
+
+}
+
+
+
+
+                                                  
+
+
+#atvantage1
+					{   font-family: "arek-boldItalic" ,sans-serif;
+                        color: #66A83A;
+                        text-align: center;
+
+                        
+                        
+					}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+
+
+                                                  /*ATVANTAGE*/
+
+.atvantage-block
+{   
+	font-family: "arek-boldItalic" ,sans-serif;
+	outline: 0px solid; 
+	text-align: center;
+	
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+.atvantage-block .clock
+{   
+	width: 33%;
+	text-align: center;
+	display: inline-block;
+
+
+}
+                                                
+
+.atvantage-block .clock .mdi-dog
+			{
+				
+               font-size: 150px;
+               color: #66A83A;
+			}
+
+
+.atvantage-block .clock #words1
+				{
+                       color: #A3A3A3;
+				}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+.atvantage-block .pow
+				{   width: 33%;
+			        text-align: center;
+	                display: inline-block;
+
+				}
+
+.atvantage-block .pow .mdi-paw
+				{   
+                    font-size: 150px;
+                    color: #66A83A;
+				}
+
+.atvantage-block .pow #words2
+              {
+                  color: #A3A3A3;
+              }
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.atvantage-block .pirate
+		{           width: 33%;
+                    text-align: center;
+	                display: inline-block;
+		}
+
+.atvantage-block .pirate .mdi-pirate
+		{
+                   font-size: 150px;
+                   color: #66A83A;
+		}
+
+.atvantage-block .pirate #words3
+		{
+                   color: #A3A3A3;
+		}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+
+                                                     /*ABOUT US*/
+
+ hr 
+ {
+     height: 12px;
+     border: 0;
+     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+ }
+
+
+.aboutus-block
+{   
+	font-family: "arek-boldItalic", sans-serif;
+	background-color: #F5F5F5;
+
+}
+
+.aboutus-block .aboutus
+{
+	text-align: center;
+}
+
+
+
+.aboutus-block #aboutus2
+{
+	color: #66A83A;
+}
+
+
+.aboutus-block #lorem
+{
+	color: #A3A3A3;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+
+.aboutus-block .aboutus-text
+{
+	display: inline-block;
+	width: 58%;
+	vertical-align: top;
+	outline: 0px solid;
+	padding-right: 20px;
+}
+
+
+
+.aboutus-block .aboutus-img
+{
+	display: inline-block;
+	width: 38%;
+}
+
+.aboutus-block #vernagir
+{
+	color: #6A6A6A;
+	text-indent: 30px;
+}
+.aboutus-block #vernagir2
+{
+	color: #A3A3A3;
+	margin-left: 30px;
+	font-size: 22px;
+}
+.aboutus-block .border
+{
+	margin: 30px 0 0 40px;
+}
+
+.aboutus-block .border a
+{
+	border: 1px solid;
+	border-radius: 10px;
+	color: #66A83A;
+	text-decoration: none;
+	font-size: 23px;
+	padding: 10px 20px;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+                                                 /*HAPPY USER*/
+
+
+
+
+.happy-block
+{   
+	font-family: "arek-boldItalic", sans-serif;
+	background-color: #66A83A;
+	text-align: center;
+	color: white;
+}
+
+
+
+.happy-block .frstname
+{
+   border: 1px solid;
+   border-radius: 10px;
+   display: inline-block;
+   padding: 3px 100px;
+   margin-top: 10px;
+
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+
+                                                                   /*BLOG*/
+
+                          #header22{color: #66A83A; text-align: center;font-family: "arek-boldItalic", sans-serif;}    
+                          
+
+.blog
+{
+	outline: 0px solid blue;
+	display: inline-block;
+	width: 98%;
+	text-align: center;
+
+
+} 
+
+.blog-item-name
+{
+	display: inline-block;
+	background-color: white;
+	position: absolute;
+	top: 332px;
+	left: 0;
+	right: 0;
+	padding-bottom: 30px;
+	border: 1px solid black;
+	border-top: none;
+	
+	font-size: 20px; 
+	
+	text-align: center;
+	font-weight: bold;
+
+}
+
+
+.blog .blog-item
+{   
+
+	display: inline-block;
+	background-image: url("../img/1.jpg");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	outline: 0px solid orange;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+
+
+
+
+
+
+.blog .blog-item1
+{   
+	display: inline-block;
+	background-image: url("../img/3.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+.blog .blog-item2
+{   
+	display: inline-block;
+	background-image: url("../img/2.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+.blog .blog-item3
+{
+
+
+    display: inline-block;
+	background-image: url("../img/5.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------*/
+.adbaner
+{
+	text-align: center;
+	color: white;
+	font-family: "arek-boldItalic", sans-serif;
+
+}
+.adbaner #adbaner1
+{
+	display: inline-block;
+	background-color: #66A83A;
+	width: 45%;
+	height: 508px;
+	margin: 0  5px
+}
+.adbaner #adbaner2
+{
+	display: inline-block;
+	background-color: #66A83A;
+	width: 45%;
+	height: 508px;
+	margin: 0  5px;
+}
+
+
+.adbaner #adbaner11
+{ 
+	font-family: "arek-boldItalic", sans-serif;
+  font-size: 700%;
+  display: inline-block;
+  margin: 180px 0 0 0;
+
+}
+
+.adbaner #adbaner22
+{    
+	font-family: "arek-boldItalic", sans-serif;
+     font-size: 700%;
+     display: inline-block;
+     margin: 180px 0 0 0;
+
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+                                                        /*Business Partners*/
+
+#header33
+{   font-family: "arek-boldItalic", sans-serif;
+	color: #66A83A;
+	text-align: center;
+}
+.partners
+{
+	
+	text-align: center;
+}
+
+
+.partners #pic1
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic2
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic3
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic4
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic5
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic6
+{
+	display: inline-block;
+	width: 14%
+}
+.partners #pic7
+{
+	display: inline-block;
+	width: 14%
+}
+
+                                                      
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+
+                                                     /*Form*/
+
+.form-background
+{
+	font-family: "arek-boldItalic", sans-serif;
+	background-color: #F5F5F5;
+}
+
+.form-background #formheader
+{
+ color: #66A83A;
+ text-align: center;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+.formarea
+{
+	outline: 0px solid;
+	width: 100%;
+	text-align: center;
+
+}
+.formarea form #left-form
+{
+  
+   display: inline-block;
+   width: 30%;
+   
+}
+
+.formarea form #left-form input
+{
+    width: 90%;
+	padding:10px;
+	margin: 10px;
+	border: 1px solid #E0E0E0;
+	border-radius: 8px;
+	background-color: #F2F2F2; 
+}
+
+.formarea form #right-form
+{
+   
+   display: inline-block;
+   width: 30%;
+   
+   
+}
+.formarea form #right-form input
+{
+	width: 90%;
+	padding:10px;
+	margin: 10px;
+	border: 1px solid #E0E0E0;
+	border-radius: 8px;
+	background-color: #F2F2F2;
+  
+}
+
+
+.formarea #textarea textarea
+{
+	background-color: #F2F2F2;
+	border: 1px solid #E0E0E0;
+	border-radius: 8px;
+
+}
+
+
+.formarea #submit input
+{
+	padding: 8px 20px 8px 20px;
+	background-color: #F2F2F2;
+	border: 1px solid #66A83A;
+	border-radius: 8px;
+
+}
+
+.formarea #submit input[value="Ուղարկել"]
+{
+	color: #66A83A;
+	font-size: 15px;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+                                                    
+                                                    /*FOOTER*/
+
+
+.block-footer
+{
+	background-color: #66A83A;
+	background-size: 100%;
+	color: white;
+}
+
+
+.block-footer .block-logo
+{
+  width: 30%;
+  outline: 1px solid red;
+  display: inline-block;
+  margin: 5px;
+
+}
+.block-footer .block-logo #logo7
+{
+	color: white;
+	font-size: 40px;
+	text-decoration: none;
+}
+
+
+/*---------------------------------------------*/
+
+.block-footer .block-menu
+{
+	width: 30%;
+	outline: 1px solid blue;
+	display: inline-block;
+	margin: 5px;
+}
+
+
+
+
+.block-footer .block-menu a
+{
+	display: block;
+	color: white;
+	text-decoration: none;
+	/*margin: 0px 0px 10px 0px;*/
+	line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+.formarea form .for-50
+{
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	padding:19px 0 0 21px
+
+}
+
+
+.formarea form input
+{
+	width: 90%;
+    padding:8px;
+    border-radius: 5px;
+    border: 1px solid;
+
+}
+
+.formarea form textarea
+{
+	width: 100%;
+	height: 150px;
+	margin-top: 20px;
+	border-radius: 5px;
+    border: 1px solid;
+}
+.form-background .textarea1
+{
+	padding: 0 48px;
+
+  
+}
+
+.form-background .send
+{
+	
+	text-align: center;
+	margin-top: 30px;
+
+}
+
+
+.form-background .send a
+{
+	display: inline-block;
+	border: 1px solid;
+	border-radius: 10px;
+	color: #66A83A;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+
+
+
+
+
+.search1 input[name=search]{
+	width: 300px;
+	background-color: #ccc;
+	border: 2px solid red;
+	border-right: none;
+	font-size: 14px;
+}
+.search1 button
+{
+	border: 2px solid red;
+	background-color: #ccc;
+	border-left: none;
+	position: absolute;
+	font-size: 16,5px;
+
+}*/

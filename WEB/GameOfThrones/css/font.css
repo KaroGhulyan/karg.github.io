@@ -1,0 +1,100 @@
+.blog
+{
+	outline: 0px solid blue;
+	display: inline-block;
+	width: 98%;
+	text-align: center;
+
+
+} 
+
+.blog-item-name
+{
+	display: inline-block;
+	background-color: white;
+	position: absolute;
+	top: 332px;
+	left: 0;
+	right: 0;
+	padding-bottom: 30px;
+	border: 1px solid black;
+	border-top: none;
+	
+	font-size: 20px; 
+	
+	text-align: center;
+	font-weight: bold;
+
+}
+
+
+.blog .blog-item
+{   
+
+	display: inline-block;
+	background-image: url("../img/1.jpg");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	outline: 0px solid orange;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+
+
+
+
+
+
+.blog .blog-item1
+{   
+	display: inline-block;
+	background-image: url("../img/3.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+.blog .blog-item2
+{   
+	display: inline-block;
+	background-image: url("../img/2.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+}
+
+.blog .blog-item3
+{
+
+
+    display: inline-block;
+	background-image: url("../img/5.png");
+	height: 384px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 20.5%;
+	background-position: center;
+	position: relative;
+	margin-right:20px;
+
+
+
+}

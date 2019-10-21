@@ -1,0 +1,121 @@
+body{
+	display: flex;
+	justify-content: center;
+	padding: 10%;
+
+}
+.animation div:nth-child(1){
+	width: 30px;
+  height: 100px;
+  background-color: red;
+  border: 3px solid blue;
+  -webkit-animation-name: one; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  animation-name: one;
+  animation-duration: 4s;
+  position: relative;
+}
+.animation div:nth-child(2){
+  width: 30px;
+  height: 100px;
+  background-color: red;
+  border: 3px solid blue;
+  -webkit-animation-name: two; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  animation-name: two;
+  animation-duration: 4s;
+  position: relative;
+}
+.animation div:nth-child(3){
+  width: 30px;
+  height: 100px;
+  background-color: red;
+  border: 3px solid blue;
+  -webkit-animation-name: three; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  animation-name: three;
+  animation-duration: 4s;
+  position: relative;
+}
+.animation div:nth-child(4){
+  width: 30px;
+  height: 100px;
+  background-color: red;
+  border: 3px solid blue;
+  -webkit-animation-name: four; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  animation-name: four;
+  animation-duration: 4s;
+  position: relative;
+
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes one {
+  0%   {background-color:red; left:0px; top:0px; }
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes one {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes two {
+  0%   {background-color:red; left:0px; top:0px; }
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes two {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes three {
+  0%   {background-color:red; left:0px; top:0px; }
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes three {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes four {
+  0%   {background-color:red; left:0px; top:0px; }
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes four {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px; height: 20%;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}

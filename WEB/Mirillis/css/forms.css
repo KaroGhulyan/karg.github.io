@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+.forms
+{
+ margin-left: 50px;
+}
+
+#marg1
+{
+	margin-right: 50px;
+}
+
+#widht1 
+{
+	width: 50%;
+	padding: 10px;
+	margin: 13px auto;
+}
+
+
+
+#widht2
+{
+	width: 25%;
+	padding: 10px;
+	margin: 13px auto;
+}
+
+.dimel
+{
+	text-align: center;
+	color: white;
+}
+
+.dimel input
+{
+	display: inline-block;
+	color: white;
+	padding: 12px 50px;
+	font-size: 15px;
+	background-color: #0864A3;
+	border-radius: 5px;
+	border: 1px solid #0864A3;
+	box-shadow: 1px 8px 13px rgba(0,0,0,0.3);
+	
+
+}
+
+
+
+#bold
+{
+	font-weight: bold;
+}
+
+.Renter input [type='radio']{color: blue;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.for-form form input{
+	width: 100%;
+}
+.for-contact-block form .for-50{
+	width: 46%;
+	display: inline-block;
+	padding: 10px 15px;
+}
+.for-contact-block form .for-50 input{
+	width: 100%;
+}
+.for-contact-block form .for-100{
+	padding: 10px 15px;
+	width: 95%;
+}
+.for-contact-block form .for-100 textarea{
+	width: 100%;	
+}
+.for-contact-block form .for-submit{
+	text-align: center;
+}*/

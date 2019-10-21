@@ -1,0 +1,58 @@
+.background 
+  { 
+
+	background-image: url(../img/img2.jpg);
+	height: 550px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+  }
+
+
+.background .background-text 
+	{ 
+     font-family: "arek-boldItalic", sans-serif;
+     width: 56%;
+     display: inline-block;
+     color: #fff;
+     outline: 1px solid;
+     vertical-align: top;
+     padding: 4%;
+     margin-top: 12%;
+
+	}
+		
+
+.background .background-text a
+{
+	color: #fff;
+
+	
+}
+
+
+.background .dog
+       {
+         width: 35%;
+         display: inline-block;
+         outline: 1px solid;
+         margin-top: 2%;
+
+
+       }
+
+
+
+
+.background .background-text .avelin
+{
+	text-align: center;
+}
+.background .background-text .avelin a
+{
+   border: 1px solid;
+   text-decoration: none;
+   padding: 10px 20px;
+
+}

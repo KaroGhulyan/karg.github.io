@@ -1,0 +1,25 @@
+.image
+{
+	background-image: url(../img/videoimg.jpg);
+	width: 100vw;
+	height: 150vh;
+	background-size: cover;
+	
+	
+}
+
+.image iframe
+{
+	
+	display: block;
+	margin: 0 auto;
+	
+
+}
+
+.image video
+{
+	display: block;
+	margin: 0 auto;
+	
+}

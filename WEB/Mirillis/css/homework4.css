@@ -1,0 +1,235 @@
+
+
+
+@font-face{
+	font-family: "arek-boldItalic";
+	src:url("․․/fonts/bolditalic/arek-boldItalic.eot");
+	src:url("․․/fonts/bolditalic/arek-boldItalic.eot?#iefix")format("eot"),
+	url("․․/fonts/bolditalic/arek-boldItalic.ttf")format("truetype"),
+	url("․․/fonts/bolditalic/arek-boldItalic.woff")format("woff");
+    
+}
+
+
+
+
+
+
+.block-menu
+{
+	text-align: center;
+}
+
+hr
+{
+	width: 7%;
+	border: 1.5px solid #0B72B5;
+
+}
+
+.block-menu h1
+{
+	margin: 0;
+}
+.block-menu .block-1 
+{
+	text-align: center;
+	width: 100%;
+}
+.block-menu .block-1 .border-1
+{
+	display: inline-block;
+	background-color: rgba(11, 114, 181, 0.20);
+
+	border: 2px solid #0B72B5;
+	border-radius: 15px;
+	box-shadow: 2px 4px rgba(2, 2, 2, 0.19);
+	padding: 4% 12%;
+	margin: 0 1%;
+	position: relative;
+}
+
+.block-menu .block-1 .border-2
+{
+	display: inline-block;
+	background-color: rgba(11, 114, 181, 0.20);
+
+	border: 2px solid #0B72B5;
+	border-radius: 15px;
+	box-shadow: 2px 4px rgba(2, 2, 2, 0.19);
+	padding: 4% 12%;
+	margin: 0 1%;
+	position: relative;
+
+}
+
+.block-menu .block-1 .border-3
+{
+	display: inline-block;
+	background-color: rgba(11, 114, 181, 0.20);
+
+	border: 2px solid #0B72B5;
+	border-radius: 15px;
+	box-shadow: 2px 4px rgba(2, 2, 2, 0.19);
+	padding: 4% 12%;
+	margin: 0 1%;
+	position: relative;
+	text-decoration: none;
+}
+
+
+
+.block-menu .block-1 p
+{
+	font-size: 1vw;
+	position: absolute;
+	bottom: 0;
+	right:29%;
+
+}
+
+.block-menu .block-1 a
+{
+	font-size: 1vw;
+	position: absolute;
+	color: black;
+	text-decoration: none;
+	bottom: 9%;
+	right:21%;
+
+}
+
+.block-menu .block-1 i
+{
+	font-size: 5vmax;
+	color: #0B72B5;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+                                                              /*BLOCK-2*/
+
+
+
+.block-menu .block-2
+{
+
+   background-image: url(../img/jpg1.jpg);
+   background-position: cover;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   text-align: center;
+    height: 26vmax;
+
+
+}
+
+.block-menu .block-2 .color
+{
+   
+   background-size: 100%;
+   background-position: cover;
+   background-repeat: no-repeat;
+   text-align: center;
+   
+   background-color: rgba(0, 0, 0, 0.6509803921568628);
+   height: 26vmax;
+   
+}
+.block-menu .block-2 h1
+{
+	color: white;
+	display: inline-block;
+	padding: 2% 0 0 0;
+}
+
+.block-2 .forms
+{
+	display: inline-block;
+	
+	width: 99%;
+}
+
+.block-2 .forms input
+{
+	width: 40%;
+	padding: 1%;
+	border-top:none;
+	border-right: none;
+	border-left: none;
+	margin: 10px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+input[placeholder="text"]
+{
+	color: white;
+}
+
+.block-2 .forms textarea
+{
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 10px 0;
+}
+
+
+ .button input
+{   margin-top: 10px;
+	padding: 10px 23px;
+	border:none;
+	background-color: #01DBBA;
+	border-radius: 18px;
+	color: white;
+}
+
+
+
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+input::-ms-input-placeholder { /* Microsoft Edge */
+   color:    white;
+}
+
+input::placeholder { /* Most modern browsers support this now. */
+   color:    white;
+}
+
+textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+textarea::-ms-input-placeholder { /* Microsoft Edge */
+   color:    white;
+}
+
+textarea::placeholder { /* Most modern browsers support this now. */
+   color:    white;
+}

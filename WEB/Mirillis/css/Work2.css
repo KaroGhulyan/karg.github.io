@@ -1,0 +1,121 @@
+.menu-block .img-block{
+	display: inline-block;
+	background-image: url(../img/wild4.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50vw;
+	height: 100vh;
+}
+.menu-block .forms-block{
+	display: inline-block;
+	text-align: center;
+	width: 45vmax;
+	outline: 0px solid red;
+	vertical-align: top;
+}
+
+.menu-block .forms-block .mdi-pine-tree{
+	text-align: center;
+	font-size: 50px;
+	background-color: white; 
+	color:#586956;
+
+}
+.forms-block h1{
+	color: #976830;
+}
+.menu-block .forms-block  .button input[type="submit"]{
+	padding: 8px 160px;
+	background-color: #475993;
+	border-color: #475993;
+	border-radius: 5px;
+	color: white;
+	font-size: 18px;
+	border: 1px solid;
+	
+}
+.menu-block .forms-block .button {
+	position: relative;
+	
+	display: inline-block;
+
+}
+.menu-block .forms-block .button img{
+	position: absolute;
+	left: 29%;
+	top: 3%;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+.menu-block .forms-area{
+	outline: 0px solid;
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-around;
+}
+
+.menu-block .forms-area input{
+	display: inline-block;
+	width: 90%;
+	border-radius: 5px;
+	border: 1px solid;
+	padding: 5px 10px;
+	background-color: #FCFCFC;
+	border-color: #DDDEDE;
+	margin-top: 5px;
+
+}
+
+.menu-block input[type="email"]{
+	
+	border-radius: 5px;
+	border: 1px solid;
+	width: 88%;
+	padding: 5px 0;
+	background-color: #FCFCFC;
+	border-color: #DDDEDE;
+	margin-top: 5px;
+}
+
+.menu-block input[type="password"]{
+	
+	border-radius: 5px;
+	border: 1px solid;
+	width: 88%;
+	padding: 5px 0;
+	background-color: #FCFCFC;
+	border-color: #DDDEDE;
+	margin-top: 5px;
+}
+
+.menu-block label{
+	color: #999999;
+}
+
+.menu-block .input input{
+
+	padding: 8px 160px;
+	background-color: #50D282;
+	border-color: #475993;
+	border-radius: 5px;
+	color: white;
+	font-size: 18px;
+	border: 1px solid;
+
+}
+
+p{
+	color: #999999;
+}
+
+span{
+	font-weight: bold;
+	color: black;
+}
+.menu-block .img-block h1{
+	text-align: center;
+	font-size: 7vmax;
+	color: #976830;
+
+}

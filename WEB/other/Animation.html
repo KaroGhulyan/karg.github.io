@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style type="text/css">
+		.Work{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 100%;
+		}
+		.World{
+			width: 100vh;
+			height: 100vh;
+			position: relative;
+			outline: 1px solid;
+			background-color: darkblue;
+			overflow: hidden;
+			animation-name: world;
+    		animation-delay: 1s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+    		animation-timing-function: linear;
+		}
+		.World img.grass{
+			width: 100%;
+			position: absolute;
+			bottom: -110px;
+		}
+		.World img.sun{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 50%;
+			left: -50%;
+			animation-name: sun;
+    		animation-delay: 1s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+    		animation-timing-function: linear;
+    		z-index: 2;
+
+		}
+		.World img.dino{
+			position: absolute;
+			width: 500px;
+			height: 200px;
+			bottom: 30px;
+			left: -500px;
+			animation-name: dino;
+    		animation-delay: 3s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+		}
+		img.amp1{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			animation-name: sun;
+    		animation-delay: 1s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+    		z-index: 1;
+			top: 50%;
+			left: -50%;
+		}
+		img.star1{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 10%;
+			right: 10%;
+			animation-name: starone;
+    		animation-delay: 2s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+		}
+		img.star2{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 20%;
+			right: 30%;
+			animation-name: startwo;
+    		animation-delay: 2s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+		}
+		img.star3{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 10%;
+			right: 40%;
+			animation-name: startree;
+    		animation-delay: 2s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+		}
+		img.star4{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 30%;
+			right: 5%;
+			animation-name: starfour;
+    		animation-delay: 2s;
+    		animation-duration: 8s;
+    		animation-iteration-count: infinite;
+    		animation-fill-mode: forwards;
+		}
+@keyframes starone {
+	    from{
+			top: 10%;
+			right: 10%;
+			opacity: 1;
+	    	}to{
+				top: -10%;
+				right: 10%;
+				opacity: 0;
+	    	}
+}
+@keyframes startwo {
+	    from{
+			top: 20%;
+			right: 30%;
+			opacity: 1;
+	    	}to{
+				top: -10%;
+				right: 10%;
+				opacity: 0;
+	    	}
+}
+@keyframes startree {
+	    from{
+			top: 10%;
+			right: 40%;
+			opacity: 1;
+	    	}to{
+				top: -10%;
+				right: 10%;
+				opacity: 0;
+	    	}
+}
+@keyframes starfour {
+	    from{
+			top: 30%;
+			right: 5%;
+			opacity: 1;
+	    	}to{
+				top: -10%;
+				right: 10%;
+				opacity: 0;
+	    	}
+}
+@keyframes world {
+	    from{
+			background-color: darkblue;
+	    	}to{
+			background-color: lightblue;
+	    	}
+}
+	@keyframes dino {
+	    from{
+			position: absolute;
+	    	left: -500px;
+	    	}to{
+			position: absolute;
+	    		left:1000px;
+	    	}
+}
+	@keyframes sun{
+		0% {
+	        position: absolute;
+			top: 25%;
+			left: -20%;
+	    }
+
+	    25% {
+	        position: absolute;
+			top: 10%;
+			left: -10%;
+	    }
+
+	    50% {
+	        position: absolute;
+			top: 5%;
+			left: 40%;
+	    }
+
+	    75% {
+	        position: absolute;
+			top: 10%;
+			left: 70%;
+	    }
+
+	    100% {
+	        position: absolute;
+			top: 25%;
+			left: 100%;
+	    }
+	}
+
+	</style>
+	<div class="Work">
+		<div class="World">
+			<img src="img/trava.png" class="grass">
+			<img src="img/sun.gif" class="sun">
+			<img src="img/dino.gif" class="dino">
+			<img src="img/amp.png" class="amp1">
+			<img src="img/star.png" class="star1 stars">
+			<img src="img/star.png" class="star2 stars">
+			<img src="img/star.png" class="star3 stars">
+			<img src="img/star.png" class="star4 stars">
+		</div>
+	</div>
+	<audio autoplay>
+		<source src="audio/petux.ogg" type="audio/ogg">
+ 		<source src="audio/petux.mp3" type="audio/mpeg">
+	</audio>
+	<audio autoplay>
+		<source src="audio/dino.ogg" type="audio/ogg">
+ 		<source src="audio/dino.mp3" type="audio/mpeg">
+	</audio>
+	<audio autoplay>
+		<source src="audio/dinoz.ogg" type="audio/ogg">
+ 		<source src="audio/dinoz.mp3" type="audio/mpeg">
+	</audio>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+body{text-align: center;}
+.box{
+    display: inline-flex;
+	height: 700px;
+	outline: 1px solid;
+	
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	width: 40%;
+	margin: 10px;
+}
+
+.box1{
+    display: inline-flex;
+	height: 700px;
+	outline: 1px solid;
+	
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	width: 40%;
+	margin: 10px;
+}
+.box div{
+	width: 200px ;
+	height: 200px;
+	outline: 1px solid;
+	background-image: url(../img/1.jpg);
+	
+	
+
+}
+
+.box1 div{
+	width: 200px ;
+	height: 200px;
+	outline: 1px solid;
+	background-image: url(../img/2.png);
+	
+	
+
+}

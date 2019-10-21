@@ -1,0 +1,46 @@
+.menu-block{
+	text-align: center;
+}
+.menu-block #box1{
+width: 20%;
+height: 200px;
+display: inline-block;
+border: 1px solid;
+margin: 10px;
+float: left;
+
+}
+.menu-block #box1 input{
+	width: 50%;
+	height: 50px;
+
+
+}
+.menu-block select{
+	padding: 5px;
+}
+.menu-block button{
+	padding: 10px;
+	background-color: blue;
+	margin: 10px;
+}
+.menu-block .box2{
+width: 20%;
+height: 200px;
+display: inline-block;
+background-color: yellow;
+border: 1px solid;
+margin: 10px;
+float: left;
+
+}
+.menu-block #box3{
+width: 20%;
+height: 200px;
+background-color: red;
+border: 1px solid;
+display: inline-block;
+margin: 10px;
+float: left;
+
+}

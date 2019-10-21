@@ -1,0 +1,46 @@
+
+.image
+{
+	
+  background-image: url(../img/wild2.jpg);
+  background-position: center center;
+  background-size: cover;
+ 
+  
+  height:100vmax;
+  width: 50vmax;
+  background-repeat: no-repeat;
+  align-items: center;
+
+
+	
+	
+	
+}
+.text
+{
+	text-align: center;
+	color: purple;
+	font-size: 7vmin;
+}
+
+
+.image1
+{
+	background-image: url(../img/wild3.jpg);
+  background-position: center center;
+  background-size: cover;
+ 
+  height: 100vmax;
+  width: 100vmax;
+  background-repeat: no-repeat;
+  align-items: center;
+
+}
+
+.text2
+{
+	text-align: center;
+	color: purple;
+	font-size: 7vmin;
+}

@@ -1,0 +1,15 @@
+#img {
+	text-align: center;
+	background-color: yellow;
+	outline: solid 1px;
+	height: 1000px;
+	padding: 5%;
+}
+#img img{
+
+	width: 200px;
+	height: 200px;
+}
+#img .pic1{
+
+}

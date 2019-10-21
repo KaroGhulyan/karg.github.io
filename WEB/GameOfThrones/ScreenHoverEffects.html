@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script language="javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="css/ScreenHoverEffects.css">
+	<meta charset="utf-8">
+	<title>GOT</title>
+</head>
+<body>
+	<section class="split">
+		<div class="screen stark" onmouseover="play1()" id="stark">
+			<div class="content">
+				<h2>house stark</h2>
+				<audio id="myaudio1" controls class="starkmusic">
+					<source src="audio/got.ogg" type="audio/ogg">
+ 				    <source src="audio/got.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+		</div>
+		<div class="screen lan"   onmouseover="play2()" id="lan">
+			<div class="content">
+				<h2>house lannister</h2>
+   				<audio id="myaudio2" controls class="lanmusic">
+					<source src="audio/got1.ogg" type="audio/ogg">
+ 				    <source src="audio/got1.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+		</div>
+		<div class="screen tar"   onmouseover="play3()" id="tar">
+			<div class="content">
+				<h2>House Targaryen</h2>
+				<audio id="myaudio3" controls class="tarmusic">
+					<source src="audio/got3.ogg" type="audio/ogg">
+ 				    <source src="audio/got3.mp3" type="audio/mpeg">
+				</audio>
+			</div>
+		</div>
+	</section>
+	
+	<script type="text/javascript">
+	function play1(){
+			var audio1 = document.getElementsByTagName("audio")[0];
+			audio1.play();
+			$(".stark").mouseout(function() {
+			audio1.load();
+			});
+		
+	}
+	function play2(){
+			var audio2 = document.getElementsByTagName("audio")[1];
+			audio2.play();
+			$(".lan").mouseout(function(){
+				audio2.load();
+			})
+	}
+	function play3(){
+			var audio3 = document.getElementsByTagName("audio")[2];
+			audio3.play();
+			$(".tar").mouseout(function(){
+				audio3.load();
+			})
+	}
+	</script>
+</body>
+</html>
