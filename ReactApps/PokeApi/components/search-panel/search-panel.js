@@ -1,15 +1,16 @@
 import React from 'react';
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
-import './item-list.css';
-import PokemonCard from '../pokemon-card/card';
+import './search-panel.css';
 import Loading from '../loading/loading';
+import Search from './search';
+import Pagination from '../list/pagination';
 import Error from '../error/error';
-import Pagination from './pagination';
-import Search from '../search-panel/search';
+import SearchCard from "./search-cards";
 
 
-class List extends React.Component {
+
+class SearchPanel extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -18,7 +19,7 @@ class List extends React.Component {
             loading: false,
             totalPages: 0,
             page: 0,
-            term: "",
+            term: '',
         }
         this.handlePaginationClick = this.handlePaginationClick.bind(this);
         this.search = this.search.bind(this);
@@ -29,10 +30,10 @@ class List extends React.Component {
     fetchPokemons() {
         this.setState({ loading: true });
         const { page } = this.state;
-        fetch(`${API_URL}pokemon/?offset=${page}&limit=6`)
+        fetch(`${API_URL}pokemon/?offset=${page}&limit=500`)
             .then(handleResponse)
             .then((pokemons) => {
-                console.log(pokemons);
+                // console.log(pokemons);
                 const { totalPages } = pokemons;
                 this.setState({
                     data: pokemons.results,
@@ -83,32 +84,30 @@ class List extends React.Component {
 
 
         return (
-            <div className="body">
+            <div className="search-body">
+                <Search
+                    onSearchChange={this.onSearchChange}
+                />
 
-                <div className="table-container ">
-                    <Search
-                        onSearchChange={this.onSearchChange}
-                    />
-                    <div className="card-table ">
+                <div className="search-table">
+                    {
+                        visibleItems.map(pokemon => (
+                            <SearchCard
+                                key={pokemon.name}
+                                name={pokemon.name}
+                                url={pokemon.url}
+                                data={visibleItems}
 
-                        {
-                            visibleItems.map(pokemon => (
-                                <PokemonCard
-                                    key={pokemon.name}
-                                    name={pokemon.name}
-                                    url={pokemon.url}
-                                    data={visibleItems}
-                                />
-                            ))
-                        }
-                        <Pagination
-                            page={page}
-                            totalPages={totalPages}
-                            handlePaginationClick={this.handlePaginationClick} />
-                    </div>
+                            />
+                        ))
+                    }
+                    <Pagination
+                        page={page}
+                        totalPages={totalPages}
+                        handlePaginationClick={this.handlePaginationClick} />
                 </div>
             </div>
         )
     }
 }
-export default List;
+export default SearchPanel;

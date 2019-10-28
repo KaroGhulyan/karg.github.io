@@ -4,25 +4,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-.body {
+.search-body {
   display: flex;
   justify-content: center;
+  /* border: 1px solid red; */
+  /* flex-direction: column; */
   /* width: 100%;
-  background-image: url(img.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh; */
+    background-image: url(img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; */
 }
-
-.card-table {
+.search-table {
   max-width: 700px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 50px 0;
   background-color: white;
+  /* border: 1px solid red; */
 }
 .loading-container {
   position: absolute;

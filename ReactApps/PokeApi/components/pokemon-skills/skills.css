@@ -69,7 +69,7 @@ a {
   height: 10rem;
   object-fit: cover;
   border-radius: 50%;
-  border: 0.7rem solid black;
+  border: 0.5rem solid black;
   margin-top: -7rem;
   z-index: 999;
   background-color: white;
@@ -112,4 +112,42 @@ a {
 .skills li {
   margin-right: 15px;
   text-transform: uppercase;
+}
+.button-container .Right-button .fa-chevron-right {
+  font-size: 4rem;
+  position: absolute;
+  /* border: 1px solid red; */
+  color: tomato;
+  top: 50%;
+  right: 25%;
+  transform: translate(0%, -50%);
+  opacity: 0.5;
+  transition: 0.2s all ease;
+  cursor: pointer;
+}
+.button-container .Right-button .fa-chevron-right:hover {
+  opacity: 1;
+  font-size: 5rem;
+}
+.button-container .Left-button .fa-chevron-left {
+  font-size: 4rem;
+  position: absolute;
+  /* border: 1px solid red; */
+  color: tomato;
+  top: 50%;
+  left: 25%;
+  transform: translate(0%, -50%);
+  opacity: 0.5;
+  transition: 0.2s all ease;
+  cursor: pointer;
+}
+.button-container .Left-button .fa-chevron-left:hover {
+  opacity: 1;
+  font-size: 5rem;
+}
+.button-container {
+  border: 1px solid red;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }

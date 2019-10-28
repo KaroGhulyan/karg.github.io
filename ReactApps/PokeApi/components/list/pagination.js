@@ -1,5 +1,7 @@
 import React from 'react';
 import './pagination.css';
+import { Link } from 'react-router-dom';
+
 
 const Pagination = (props) => {
     const { page, totalPages, handlePaginationClick } = props;
@@ -14,6 +16,7 @@ const Pagination = (props) => {
                 className="pagination-button"
                 onClick={() => handlePaginationClick('next')}
                 disabled={page >= totalPages}>Next</button>
+            <Link to="/searchpanel/" className="pagination-button-all">All</Link>
         </div>
     )
 }
