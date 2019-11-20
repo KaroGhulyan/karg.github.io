@@ -73,14 +73,14 @@ class GotService {
 
 }
 const got = new GotService();
-got.getAllCharacters()
-    .then(res => res.forEach(element => {
-        console.log(element.name);
-    }));
-got.getCharacter(130)
-    .then(res => console.log(res));
+// got.getAllCharacters()
+//     .then(res => res.forEach(element => {
+//         console.log(element.name);
+//     }));
+// got.getCharacter(130)
+//     .then(res => console.log(res));
 
-got.getAllHouses()
-    .then(res => console.log(res));
+// got.getAllHouses()
+//     .then(res => console.log(res));
 
 export default GotService;
