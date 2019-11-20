@@ -18,8 +18,19 @@ export default class RandomChar extends Component {
         }
         this.gotService = new GotService();
         this.updateCharacter = this.updateCharacter.bind(this);
+
+        console.log('constructor');
+
+    }
+    componentDidMount() {
+        console.log('componentDidMount');
         this.updateCharacter();
-        setInterval(this.updateCharacter, 1500);
+        this.timerId = setInterval(this.updateCharacter, 1500);
+    }
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+
+        console.log('componentWillUnmount');
     }
     onError = (err) => {
         this.setState({
@@ -28,7 +39,6 @@ export default class RandomChar extends Component {
         })
     }
     updateCharacter() {
-        console.log('update');
         const id = Math.floor(Math.random() * 140 + 25);//25-40
         this.gotService.getCharacter(id)
             .then((char) => {
@@ -41,6 +51,7 @@ export default class RandomChar extends Component {
     }
 
     render() {
+        console.log('Render');
 
         const { char, loading, error } = this.state;
         // if (loading) {

@@ -2,9 +2,11 @@ import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
-import ItemList from '../itemList';
-import CharDetails from '../charDetails';
 import { Button } from 'reactstrap';
+import ErrorMessage from '../errorMessage';
+import CharacterPage from '../characterPage/characterPage';
+
+
 
 
 class App extends React.Component {
@@ -12,9 +14,19 @@ class App extends React.Component {
         super(props);
         this.state = {
             showRandomChar: true,
+
+            error: false,
         }
         this.hideRandomChar = this.hideRandomChar.bind(this);
+
     }
+    componentDidCatch() {
+        console.log('error');
+        this.setState({
+            error: true,
+        })
+    }
+
     hideRandomChar() {
         this.setState((state) => {
             return { showRandomChar: !state.showRandomChar, }
@@ -22,7 +34,11 @@ class App extends React.Component {
 
 
     }
+
     render() {
+        if (this.state.error) {
+            return <ErrorMessage />
+        }
         const { showRandomChar } = this.state;
         const char = showRandomChar ? <RandomChar /> : null;
         return (
@@ -40,14 +56,7 @@ class App extends React.Component {
                                 onClick={this.hideRandomChar}>Hide</Button>{' '}
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md='6'>
-                            <ItemList />
-                        </Col>
-                        <Col md='6'>
-                            <CharDetails />
-                        </Col>
-                    </Row>
+                    <CharacterPage />
                 </Container>
             </>
         );
