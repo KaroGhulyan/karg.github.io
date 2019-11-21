@@ -1,0 +1,109 @@
+.our-best-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+}
+.our-best-container .our-best h3 {
+  /* outline: 1px solid red; */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.our-best-container .our-best {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* outline: 1px solid red; */
+  background-image: url("./paper.jpg");
+  padding: 50px;
+  text-align: center;
+}
+.our-best-container .our-best .our-best-coffe-blog {
+  padding: 30px;
+  /* outline: 1px solid red; */
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 15px 45px -9px rgba(0, 0, 0, 0.2);
+  transition: 0.3s all ease-in-out;
+}
+.our-best-container .our-best .our-best-coffe-blog:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.our-best-container .our-best .our-best-coffe-blog img {
+  width: 150px;
+  height: 130px;
+  object-fit: cover;
+}
+.our-best-container .our-best .our-best-coffe-blog p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+.aboutus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 130px 150px 130px 150px;
+  /* outline: 1px solid red; */
+  text-align: center;
+}
+.aboutus-container .aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aboutus-container .aboutus img {
+  margin-bottom: 20px;
+}
+.aboutus-container .aboutus h3 {
+  font-weight: bold;
+}
+.about-coffe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 130px 150px 130px 150px;
+  /* outline: 1px solid red; */
+  text-align: center;
+  /* width: 100%; */
+  background-image: url(./Main_bg.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.about-coffe-container .about-coffe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.about-coffe-container .about-coffe img {
+  margin: 10px 0;
+}
+.about-coffe-container .about-coffe h3 {
+  margin-bottom: 20px;
+}
+.about-coffe-container .about-coffe button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 3px 30px;
+  /* margin-top: 10px; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.3s all ease-in-out;
+
+  border-radius: 3px;
+}
+.about-coffe-container .about-coffe button:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+  background-color: rgba(194, 183, 149, 0.65);
+}

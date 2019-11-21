@@ -1,0 +1,21 @@
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+  padding: 30px;
+}
+.footer-container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-container .footer img {
+  margin-bottom: 20px;
+}
+.footer-container .footer a {
+  /* color: red; */
+  color: black;
+  text-decoration: none;
+  margin-left: 40px;
+}
