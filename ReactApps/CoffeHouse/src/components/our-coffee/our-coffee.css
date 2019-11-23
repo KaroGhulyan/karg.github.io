@@ -1,0 +1,135 @@
+.our-coffee-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+}
+.our-coffee-header {
+  width: 100%;
+  background-image: url(./Coffee_bg.jpg);
+  /* background-position: 20% 22%; */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  /* background-attachment: fixed; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 260px;
+  /* padding: 100px; */
+}
+.about-our-beans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+
+  padding: 1% 10%;
+  /* border-bottom: 1px solid black; */
+  /* border-bottom: solid 1px solid blacks; */
+
+  /* flex-wrap: wrap; */
+}
+.about-our-beans-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+.about-our-beans-info img {
+  margin: 20px 0;
+}
+.about-our-beans-info h3 {
+  font-size: 24px;
+  line-height: 35px;
+}
+.hr {
+  border: 1px solid black;
+  width: 240px;
+  margin: 0 auto;
+}
+.search-filter-blog {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 5% 0;
+}
+.search-blog {
+  /* width: 180px; */
+  /* height: 30px; */
+  display: flex;
+  align-items: center;
+}
+.search-blog input {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  width: 180px;
+  height: 30px;
+  font-size: 12px;
+}
+.search-blog span {
+  margin-right: 20px;
+  font-weight: bold;
+}
+.filter-blog {
+  display: flex;
+  align-items: center;
+}
+.filter-blog span {
+  margin-right: 20px;
+  font-weight: bold;
+}
+.filter-blog button {
+  width: 90px;
+  height: 30px;
+  margin-right: 5px;
+  background-color: white;
+  border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  transition: 0.3s all ease-in-out;
+}
+.filter-blog button:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+  background-color: bisque;
+}
+.coffe-sort-blog .sort-items {
+  padding: 30px;
+  /* outline: 1px solid red; */
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 15px 45px -9px rgba(0, 0, 0, 0.2);
+  transition: 0.3s all ease-in-out;
+}
+.sort-items:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.sort-items img {
+  width: 150px;
+  height: 130px;
+  object-fit: cover;
+}
+.sort-items p {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  /* line-height: 1px; */
+}
+.coffe-sort-blog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* padding: 5%; */
+  /* outline: 1px solid red; */
+  width: 80%;
+  margin: 0 auto;
+}
