@@ -3,17 +3,23 @@ const db = {
         {
             "name": "Solimo Coffee Beans 2 kg",
             "url": "https://images-na.ssl-images-amazon.com/images/I/815O9ktyfUL._SL1500_.jpg",
-            "price": "10.73$"
+            "price": "10.73$",
+            "country": "Brazil",
+
         },
         {
             "name": "Presto Coffee Beans 1 kg",
             "url": "https://images-na.ssl-images-amazon.com/images/I/91Ryk2gKejL._SL1500_.jpg",
-            "price": "15.99$"
+            "price": "15.99$",
+            "country": "Kenya",
+
         },
         {
             "name": "AROMISTICO Coffee 1 kg",
             "url": "https://images-na.ssl-images-amazon.com/images/I/71qBQnpQFYL._SL1500_.jpg",
-            "price": "6.99$"
+            "price": "6.99$",
+            "country": "Columbia",
+
         }
     ],
     "coffee": [

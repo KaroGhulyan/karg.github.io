@@ -9,8 +9,12 @@ class OurCoffee extends React.Component {
         super(props);
         this.state = {
             term: "",
+            filter: 'All',
+            data: DataService[1],
         }
         this.search = this.search.bind(this);
+        this.toggleSortCoffeCountrya = this.toggleSortCoffeCountry.bind(this);
+        this.onFilterChange = this.onFilterChange.bind(this);
     }
     onSearchChange = (e) => {
         const term = e.target.value;
@@ -22,14 +26,50 @@ class OurCoffee extends React.Component {
         }
 
         return items.filter(item => {
-            return item.name.indexOf(term) > -1
+            return item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
         })
     }
-    render() {
-        const { term } = this.state;
-        const visibleItems = this.search(DataService[1], term)
+    toggleSortCoffeCountry = (items, filter) => {
+        const newData = items.filter(item => {
+            return item.country.indexOf(filter) > -1;
+        })
+        switch (filter) {
+            case 'All':
+                return items;
+            case 'Brazil':
+                return newData;
+            case 'Kenya':
+                return newData;
+            case 'Columbia':
+                return newData;
+            default:
+                return items;
+        }
 
-        // console.log(DataService[1][1].url);
+    }
+    onFilterChange = (filter) => {
+        this.setState({ filter })
+    }
+    // toggleSortCoffeCountry = (b) => {
+    //     let element = document.querySelector(".btn")
+    //     // element.classList.add("active");
+    //     const { data } = this.state;
+    //     const newData = data.filter(item => {
+    //         return item.country.indexOf(b) > -1 && data;
+    //     })
+
+    //     this.setState(() => {
+    //         return {
+    //             data: newData,
+    //         };
+    //     })
+
+    // }
+
+    render() {
+        const { term, data, filter } = this.state;
+
+        const visibleItems = this.toggleSortCoffeCountry(this.search(data, term), filter);
         const item = visibleItems.map((data) => {
             return (
                 <div className='sort-items'>
@@ -39,9 +79,23 @@ class OurCoffee extends React.Component {
                     <p>{data.price}</p>
                 </div>
             )
-        })
+        });
+        const buttonsArr = [
+            { country: 'all', label: 'All' },
+            { country: 'brazil', label: 'Brazil' },
+            { country: 'kenya', label: 'Kenya' },
+            { country: 'columbia', label: 'Columbia' }
+        ]
+        const buttons = buttonsArr.map(({ country, label }) => {
+            const isActive = filter === label;
+            const clazz = isActive ? 'active' : null;
+            return (
+                <button key={country} className={clazz} type='button' onClick={() => this.onFilterChange(label)}> {label}</ button >
+            )
+        });
+
         return (
-            <div className='our-coffee-container'>
+            <div className='our-coffee-container' >
                 <OurCoffeBlog />
                 <div className='shop-blog'>
                     <div className='search-filter-blog'>
@@ -52,21 +106,18 @@ class OurCoffee extends React.Component {
                                 type='text'
                                 placeholder='start typing here...'
                                 onChange={this.onSearchChange}
+                                value={this.state.term}
                             />
                         </div>
                         <div className='filter-blog'>
                             <span>Lookiing for</span>
-                            <button>Brazil</button>
-                            <button>Kenya</button>
-                            <button>Columbia</button>
+                            {buttons}
                         </div>
 
                     </div>
                     <div className='coffe-sort-blog'>
                         {item}
                     </div>
-
-
                 </div>
             </div>
         )

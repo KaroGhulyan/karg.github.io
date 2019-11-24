@@ -90,11 +90,19 @@
   border: none;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
   transition: 0.3s all ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-blog .active {
+  background-color: bisque;
 }
 .filter-blog button:hover {
   box-shadow: none;
   transform: translateY(5px);
   background-color: bisque;
+
+  /* background-color: bisque; */
 }
 .coffe-sort-blog .sort-items {
   padding: 30px;
