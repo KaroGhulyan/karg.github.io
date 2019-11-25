@@ -1,0 +1,47 @@
+.coffee-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.coffee-details-header {
+  width: 100%;
+  background-image: url(./Coffee_bg.jpg);
+  /* background-position: 20% 22%; */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  /* background-attachment: fixed; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 260px;
+}
+.coffee-details {
+  padding: 5% 10%;
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.coffee-details-img img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+.coffee-details-info {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* text-align: center; */
+}
+.coffee-details-info h3 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.coffee-details-info img {
+  margin-bottom: 20px;
+}
+.coffee-details-info p {
+  font-weight: bold;
+}
+.coffee-details-info span {
+  font-weight: normal;
+}

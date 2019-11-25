@@ -4,6 +4,9 @@ import './main.css';
 import DataService from '../../services/services';
 import logo1 from './Beans_logo_dark.svg';
 import logo2 from './Beans_logo.svg';
+import { Link } from 'react-router-dom';
+
+
 
 
 class Main extends React.Component {
@@ -31,7 +34,7 @@ class Main extends React.Component {
                         <img src={logo2} alt="coffe" className="coffe-img" />
                         <h3>We makes every day full of energy and taste</h3>
                         <h3>Want to try our beans?</h3>
-                        <button>More</button>
+                        <Link to='./OurCoffee/'><button>More</button></Link>
                     </div>
                 </div>
                 <div className='aboutus-container'>

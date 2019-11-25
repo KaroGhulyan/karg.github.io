@@ -16,14 +16,14 @@
   z-index: 100;
   cursor: pointer;
 }
-.header-container .header a {
+.header-container .header .a {
   /* color: red; */
   color: black;
   text-decoration: none;
   margin-left: 40px;
   z-index: 100;
 }
-.header-container .header a::after {
+.header-container .header .a::after {
   content: "";
   display: block;
   width: 100%;
@@ -32,6 +32,6 @@
   transform: scale(0);
   transition: 0.4s;
 }
-.header-container .header a:hover::after {
+.header-container .header .a:hover::after {
   transform: scale(1);
 }

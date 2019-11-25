@@ -3,6 +3,9 @@ import Header from '../header';
 import Footer from '../footer';
 import Main from '../main';
 import OurCoffee from '../our-coffee';
+import CoffeeDetails from '../coffee-details';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 // import { Col, Row, Container } from 'reactstrap';
 
 
@@ -20,13 +23,15 @@ class App extends React.Component {
     render() {
 
         return (
-            <div>
+            <BrowserRouter>
                 <Header />
-                {/* <Main /> */}
-                <OurCoffee />
+                <Switch>
+                    <Route path='/' component={Main} exact />
+                    <Route path='/OurCoffee/' component={OurCoffee} exact />
+                    <Route path='/CoffeeDetails/:id' component={CoffeeDetails} exact />
+                </Switch>
                 <Footer />
-            </div>
-
+            </BrowserRouter>
         );
     }
 

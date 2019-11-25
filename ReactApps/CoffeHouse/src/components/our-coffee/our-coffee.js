@@ -2,6 +2,8 @@ import React from 'react';
 import './our-coffee.css';
 import OurCoffeBlog from './our-coffee-blog';
 import DataService from '../../services/services';
+import { withRouter } from 'react-router-dom';
+
 
 
 class OurCoffee extends React.Component {
@@ -31,7 +33,7 @@ class OurCoffee extends React.Component {
     }
     toggleSortCoffeCountry = (items, filter) => {
         const newData = items.filter(item => {
-            return item.country.indexOf(filter) > -1;
+            return item.country.indexOf(filter) > -1; //Ֆիլրի հիմք
         })
         switch (filter) {
             case 'All':
@@ -50,29 +52,13 @@ class OurCoffee extends React.Component {
     onFilterChange = (filter) => {
         this.setState({ filter })
     }
-    // toggleSortCoffeCountry = (b) => {
-    //     let element = document.querySelector(".btn")
-    //     // element.classList.add("active");
-    //     const { data } = this.state;
-    //     const newData = data.filter(item => {
-    //         return item.country.indexOf(b) > -1 && data;
-    //     })
-
-    //     this.setState(() => {
-    //         return {
-    //             data: newData,
-    //         };
-    //     })
-
-    // }
-
     render() {
         const { term, data, filter } = this.state;
 
         const visibleItems = this.toggleSortCoffeCountry(this.search(data, term), filter);
         const item = visibleItems.map((data) => {
             return (
-                <div className='sort-items'>
+                <div key={data.id} className='sort-items' onClick={() => { this.props.history.push(`/CoffeeDetails/${data.id}`) }}>
                     <img src={data.url} alt="coffee" className="coffe-img" />
                     <p>{data.name}</p>
                     <p>{data.country}</p>
@@ -124,4 +110,6 @@ class OurCoffee extends React.Component {
     }
 }
 
-export default OurCoffee;
+export default withRouter(OurCoffee);
+
+
