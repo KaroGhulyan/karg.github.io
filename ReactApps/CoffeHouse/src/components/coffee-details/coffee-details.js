@@ -70,14 +70,7 @@ class CoffeeDetails extends React.Component {
         const coffeeId = coffeeUrl.split('/')[coffeeUrl.split('/').length - 1];
         // console.log(typeof coffeeId);
         const itemData = this.coffeIndex(data, coffeeId);
-        console.log(itemData);
-        console.log(this.props.match.params.id);
-        // const newdata = itemData.map(item => {
-        //     return item.id;
-        // })
-        console.log(itemData[0].url);
-        // console.log(data);
-        // console.log(url);
+
 
         return (
             <div className='coffee-details-container' >

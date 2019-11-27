@@ -1,0 +1,87 @@
+.coffee-shop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+}
+.coffee-shop-header {
+  width: 100%;
+  background-image: url(./MaskGroup.png);
+  /* background-position: 20% 22%; */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  /* background-attachment: fixed; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 260px;
+  /* padding: 100px; */
+}
+.shop-our-beans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+
+  padding: 1% 10%;
+  /* border-bottom: 1px solid black; */
+  /* border-bottom: solid 1px solid blacks; */
+
+  /* flex-wrap: wrap; */
+}
+.shop-our-beans-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+.shop-our-beans-info img {
+  margin: 20px 0;
+}
+.shop-our-beans-info h3 {
+  font-size: 24px;
+  line-height: 35px;
+}
+.hr1 {
+  border: 1px solid black;
+  width: 240px;
+  margin: 0 auto;
+}
+.shop-sort-blog .shop-items {
+  padding: 30px;
+  /* outline: 1px solid red; */
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 15px 45px -9px rgba(0, 0, 0, 0.2);
+  transition: 0.3s all ease-in-out;
+}
+.shop-items:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.shop-items img {
+  width: 150px;
+  height: 130px;
+  object-fit: cover;
+}
+.shop-items p {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  /* line-height: 1px; */
+}
+.shop-sort-blog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* padding: 5%; */
+  /* outline: 1px solid red; */
+  width: 80%;
+  margin: 0 auto;
+}

@@ -5,11 +5,7 @@ import Main from '../main';
 import OurCoffee from '../our-coffee';
 import CoffeeDetails from '../coffee-details';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-// import { Col, Row, Container } from 'reactstrap';
-
-
-
+import CoffeeShop from '../coffee-shop';
 
 
 
@@ -25,10 +21,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Header />
+                {/* <CoffeeShop /> */}
                 <Switch>
                     <Route path='/' component={Main} exact />
                     <Route path='/OurCoffee/' component={OurCoffee} exact />
                     <Route path='/CoffeeDetails/:id' component={CoffeeDetails} exact />
+                    <Route path='/CoffeeShop' component={CoffeeShop} exact />
                 </Switch>
                 <Footer />
             </BrowserRouter>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './Logo_black.svg';
 import './main.css';
 import DataService from '../../services/services';
 import logo1 from './Beans_logo_dark.svg';
@@ -13,19 +12,11 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            data: DataService[1]
         }
     }
     render() {
-        const item = DataService.map((data, i) => {
-            return (
-                <div className='our-best-coffe-blog'>
-                    <img src={data[0].url} alt="coffe" className="coffe-img" />
-                    <p>{data[0].name}</p>
-                    <p>{data[0].price}</p>
-                </div>
-            )
-        })
+        const { data } = this.state;
         return (
             <div>
                 <div className='about-coffe-container'>
@@ -56,7 +47,21 @@ class Main extends React.Component {
                 <div className='our-best-container'>
                     <div className='our-best'>
                         <h3>Our Best</h3>
-                        {item}
+                        <div className='our-best-coffe-blog' onClick={() => { this.props.history.push(`/CoffeeDetails/${data[0].id}`) }}>
+                            <img src={data[0].url} alt="coffe" className="coffe-img" />
+                            <p>{data[0].name}</p>
+                            <p>{data[0].price}</p>
+                        </div>
+                        <div className='our-best-coffe-blog' onClick={() => { this.props.history.push(`/CoffeeDetails/${data[1].id}`) }}>
+                            <img src={data[1].url} alt="coffe" className="coffe-img" />
+                            <p>{data[1].name}</p>
+                            <p>{data[1].price}</p>
+                        </div>
+                        <div className='our-best-coffe-blog' onClick={() => { this.props.history.push(`/CoffeeDetails/${data[2].id}`) }}>
+                            <img src={data[2].url} alt="coffe" className="coffe-img" />
+                            <p>{data[2].name}</p>
+                            <p>{data[2].price}</p>
+                        </div>
                     </div>
                 </div>
             </div >
