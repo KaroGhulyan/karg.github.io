@@ -96,7 +96,7 @@ class OurCoffee extends React.Component {
                             />
                         </div>
                         <div className='filter-blog'>
-                            <span>Lookiing for</span>
+                            <span>Or Filter</span>
                             {buttons}
                         </div>
 
