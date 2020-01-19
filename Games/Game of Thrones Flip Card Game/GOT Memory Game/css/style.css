@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel Decorative", cursive;
+}
+html {
+  min-height: 100vh;
+  cursor: url("https://raw.githubusercontent.com/KaroGhulyan/karg.github.io/master/Games/cur1054.cur"),
+    auto;
+}
+body {
+  background-image: url("../img/25500.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header img {
+  width: 700px;
+  height: 150px;
+  object-fit: contain;
+  z-index: 2;
+}
+.count-timer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.count-timer p {
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: lowercase;
+}
+.overlay-text {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: #e4d9ab;
+  /* cursor: pointer; */
+}
+.overlay-text.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+.game-over {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  color: #e4d9ab;
+  /* cursor: pointer; */
+  z-index: 10000;
+}
+.game-over.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+.game-over h1 {
+  font-size: 4rem;
+}
+.victory-blog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  color: #e4d9ab;
+  cursor: pointer;
+}
+.victory-blog.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+.victory-blog h1 {
+  font-size: 4rem;
+}
+.button {
+  padding: 12px;
+  background: none;
+  color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.5s all;
+}
+.button:hover {
+  color: #e4d9ab;
+}
+.button1 {
+  padding: 12px;
+  background: none;
+  color: #fff;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.5s all;
+}
+.button1:hover {
+  color: #e4d9ab;
+}
+.game-container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  perspective: 1000px;
+}
+.container {
+  max-width: 1300px;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+}
+.card {
+  height: 175px;
+  width: 125px;
+  margin: 15px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  /* cursor: pointer; */
+  visibility: visible;
+  opacity: 1;
+}
+.card.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card:active {
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 5px;
+  border: 2px solid white;
+  background: rgb(228, 217, 171);
+  backface-visibility: hidden;
+}
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: rgb(228, 217, 171);
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 7em;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    display: none;
+  }
+}
