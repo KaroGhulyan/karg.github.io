@@ -1,8 +1,40 @@
 body {
-  background: #333;
-  color: white;
+  background-color: #333 !important;
+  color: white !important;
 }
 .navbar {
   border-bottom: #008ed6 3px solid;
   opacity: 0.8;
+}
+#home-section {
+  background-image: url(../img/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* min-height: 700px; */
+  min-height: 700px;
+  /* background-color: red; */
+}
+#home-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background: rgb(0, 0, 0, 0.7);
+}
+#home-section .home-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#home-section .card-form {
+  opacity: 0.8;
+}
+#home-section .fas {
+  color: #008ed6;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
