@@ -11,9 +11,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  /* min-height: 700px; */
   min-height: 700px;
-  /* background-color: red; */
+  background-position: center;
 }
 #home-section .dark-overlay {
   position: absolute;
