@@ -20,7 +20,36 @@
     <title>Boostrap</title>
   </head>
   <body>
-    <h1>Start Project</h1>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          LifeBook
+        </a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#explore-head-section" class="nav-link">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a href="#create-head-section" class="nav-link">Create</a>
+            </li>
+            <li class="nav-item">
+              <a href="#share-head-section" class="nav-link">Share</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -39,7 +68,7 @@
     ></script>
     <script>
       //Get the Current Year for the copyright
-      $("#year").text(new Data().getFullYear());
+      //   $("#year").text(new Data().getFullYear());
     </script>
   </body>
 </html>
