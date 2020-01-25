@@ -41,13 +41,14 @@ body {
   background-color: #333 !important;
 }
 #explore-section .fas,
-#shear-section .fas {
+#share-section .fas {
   background-color: #333;
   color: white;
   padding: 5px;
   border-radius: 5px;
 }
-#creat-head-section {
+#create-head-section,
+#share-head-section {
   background-color: #008ed6 !important;
 }
 #create-section {

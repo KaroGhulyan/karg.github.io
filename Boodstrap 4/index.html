@@ -19,8 +19,11 @@
     />
     <title>Boostrap</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <body data-spy="scroll" data-target="#main-nav" id="home">
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"
+      id="main-nav"
+    >
       <div class="container">
         <a href="index.html" class="navbar-brand">
           LifeBook
@@ -196,7 +199,7 @@
       </div>
     </section>
     <!-- CREATE-HEAD-->
-    <section id="creat-head-section">
+    <section id="create-head-section">
       <div class="container">
         <div class="row">
           <div class="col text-center py-5 ">
@@ -254,6 +257,117 @@
         </div>
       </div>
     </section>
+    <!-- SHARE-HEAD-->
+    <section id="share-head-section">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center py-5 ">
+            <h1 class="display-4">Share</h1>
+            <p class="lead">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
+              doloribus ut iure itaque quibusdam rem accusantium deserunt
+              reprehenderit sunt minus.
+            </p>
+            <a href="#" class="btn btn-outline-warning">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--SHARE-SECTION -->
+    <section id="share-section" class="bg-light text-dark text-muted py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              src="img/share-section1.jpg"
+              alt="img"
+              class="img-fluid mb-3 rounded-circle"
+            />
+          </div>
+          <div class="col-md-6">
+            <h3>
+              Create Your Passion
+            </h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
+              reiciendis, voluptate at alias laborum odit aliquid tempore
+              perspiciatis repudiandae hic?
+            </p>
+            <div class="d-flex">
+              <div class="p-4 align-self-start">
+                <i class="fas fa-check fa-2x"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                distinctio iusto, perspiciatis mollitia natus harum?
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="p-4 align-self-start">
+                <i class="fas fa-check fa-2x"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                distinctio iusto, perspiciatis mollitia natus harum?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center py-4">
+            <h3>LifeBook</h3>
+            <p>Copyright &copy; <span id="year"></span></p>
+            <button
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#contactModal"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- CONTACT MODAL -->
+    <!-- CONTACT MODAL -->
+    <div class="modal fade text-dark" id="contactModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contact Us</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary btn-block">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -271,7 +385,29 @@
     ></script>
     <script>
       //Get the Current Year for the copyright
-      //   $("#year").text(new Data().getFullYear());
+      $("#year").text(new Date().getFullYear());
+
+      //Scroll
+      $("body").scrollspy({ target: "#main-nav" });
+
+      // Smooth Scrolling
+      $("#main-nav a").on("click", function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+
+          const hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800,
+            function() {
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
