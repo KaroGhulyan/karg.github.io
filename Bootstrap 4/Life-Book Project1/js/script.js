@@ -1,7 +1,7 @@
 //Get the Current Year for the copyright
 $("#year").text(new Date().getFullYear());
 
-//Scroll
+//Scroll:)
 $("body").scrollspy({ target: "#main-nav" });
 
 // Smooth Scrolling
