@@ -21,9 +21,9 @@
     <title>Bootstrap Theme</title>
   </head>
 
-  <body>
+  <body id="home" data-spy='scroll' data-target="#main-nav">
     <!-- Nav-Panel -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
       <div class="container">
         <a href="#home" class="navbar-brand">
           <img src="img/mlogo.png" alt="logo" width="50" height="50" />
@@ -109,7 +109,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <div class="card text-center border-primary mb-resp">
+            <div class="card text-center border-primary mb-resp box-1">
               <div class="card-body">
                 <h3 class="text-primary">Be Better</h3>
                 <p class="text-muted">
@@ -120,7 +120,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card text-center bg-primary text-white mb-resp">
+            <div class="card text-center bg-primary text-white mb-resp box-2">
               <div class="card-body">
                 <h3 class="text-white">Be Smarter</h3>
                 <p>
@@ -131,7 +131,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card text-center border-primary mb-resp">
+            <div class="card text-center border-primary mb-resp  box-3">
               <div class="card-body">
                 <h3 class="text-primary">Be Faster</h3>
                 <p class="text-muted">
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card text-center bg-primary text-white">
+            <div class="card text-center bg-primary text-white  box-4">
               <div class="card-body">
                 <h3 class="text-white">Be Stronger</h3>
                 <p>
@@ -206,7 +206,7 @@
                     </div>
                   </h5>
                 </div>
-                <div id="collapse2" class="collapse show">
+                <div id="collapse2" class="collapse">
                   <div class="card-body">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Impedit odit laborum qui, debitis, sequi dolores nobis
@@ -230,7 +230,7 @@
                     </div>
                   </h5>
                 </div>
-                <div id="collapse3" class="collapse show">
+                <div id="collapse3" class="collapse">
                   <div class="card-body">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Impedit odit laborum qui, debitis, sequi dolores nobis
@@ -411,6 +411,71 @@
         </div>
       </div>
     </section>
+    <!-- CONTACT-SECTION -->
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <h3>Get In Touch</h3>
+            <p class="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+              temporibus!
+            </p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                <input type="mail" class="form-control" placeholder="@-mail">
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                </div>
+                <textarea rows="5" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <input type="submit" value="Submit" class="btn btn-primary btn-block btn-lg">
+            </form>
+          </div>
+          <div class="col-lg-3 align-self-center">
+            <img src="img/mlogo.png" alt="logo" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER-SECTION -->
+    <footer id="footer" class="align-self-center py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-6 ml-auto">
+            <p class="lead">
+              Copyright &copy; <span id="year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -426,5 +491,30 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      $("#year").text(new Date().getFullYear());
+//Scroll
+      $("body").scrollspy({ target: "#main-nav" });
+
+// Smooth Scrolling
+$("#main-nav a").on("click", function (event) {
+    if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $("html, body").animate(
+            {
+                scrollTop: $(hash).offset().top
+            },
+            800,
+            function () {
+                window.location.hash = hash;
+            }
+        );
+    }
+});
+    </script>
   </body>
 </html>
