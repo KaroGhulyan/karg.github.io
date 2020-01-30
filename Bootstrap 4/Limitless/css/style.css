@@ -1,5 +1,6 @@
 body {
   font-family: "Muli", sans-serif !important;
+  overflow-x: hidden;
 }
 .navbar {
   height: 100px !important;
@@ -30,6 +31,9 @@ body {
 .navbar .nav-item:hover::after {
   transform: scale(0.7);
 }
+#home-icons {
+  /* background-color: #33aee7 !important; */
+}
 /* .navbar .nav-item.active::after {
   content: "";
   display: block;
@@ -59,4 +63,66 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+#home-heading {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background: url(../img/Wall.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
+}
+
+.info-img {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background: url(../img/img-3.png);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  text-align: center;
+  color: white;
+}
+#video-play {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background: url(../img/Wall.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
+}
+
+/* Video-Player */
+#video-play::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#video-play a {
+  color: white;
+}
+#video-play i {
+  transform: scale(0.5);
+  transition: 0.4s;
+}
+#video-play a:hover i {
+  transform: scale(1);
+}
+#main-footer {
+  background-color: black;
+  color: white;
 }
