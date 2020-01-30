@@ -1,0 +1,62 @@
+body {
+  font-family: "Muli", sans-serif !important;
+}
+.navbar {
+  height: 100px !important;
+}
+.navbar-brand {
+  position: relative;
+  background: url(../img/limitless.png);
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 150px;
+  /* left: 15px; */
+  background-size: contain;
+}
+.navbar .nav-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.navbar .nav-item::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid;
+  transform: scale(0);
+  transition: 0.4s;
+  color: white;
+}
+.navbar .nav-item:hover::after {
+  transform: scale(0.7);
+}
+/* .navbar .nav-item.active::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid;
+  transform: scale(0);
+  transition: 0.4s;
+  color: white;
+} */
+.carousel-item {
+  height: 450px;
+}
+.carousel-image-1 {
+  background: url(../img/img1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-image-2 {
+  background: url(../img/img2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel-image-3 {
+  background: url(../img/img3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
