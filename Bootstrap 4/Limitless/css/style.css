@@ -162,3 +162,17 @@ body {
   box-shadow: none;
   transform: translateY(5px);
 }
+
+/* SERVICES */
+
+#faq .card {
+  border: #444;
+}
+#faq .card a {
+  color: white;
+  text-decoration: none;
+}
+#faq .card-body,
+#faq .card-header {
+  background-color: #333;
+}
