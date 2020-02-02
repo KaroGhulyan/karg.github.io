@@ -1,0 +1,9 @@
+body {
+  position: relative;
+  background-color: salmon;
+}
+.formss {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+}
