@@ -2,10 +2,10 @@ body {
   font-family: "Muli", sans-serif !important;
   overflow-x: hidden;
 }
-.navbar {
+.navbars {
   height: 100px !important;
 }
-.navbar-brand {
+.navbar-brands {
   position: relative;
   background: url(../img/limitless.png);
   background-repeat: no-repeat;
