@@ -330,4 +330,95 @@ textarea {
     color: #494d50;
     margin-top: 20px; }
 
-/*# sourceMappingURL=main.css.map */
+@media only screen and (max-width: 1200px) {
+  .blog-home {
+    grid-template-columns: repeat(3, 1fr); }
+    .blog-home .blog-item:nth-child(3) {
+      grid-column: 2/3;
+      grid-row: 1; }
+    .blog-home .blog-item:nth-child(4) {
+      grid-column: 1/2;
+      grid-row: 2; }
+
+  .buttoncase {
+    grid-column: 1/4; } }
+@media only screen and (max-width: 992px) {
+  .header-content h1 {
+    line-height: 1.3; }
+
+  .button {
+    font-size: 18px; }
+
+  .buttoncase {
+    grid-column: 1/4; }
+
+  .portfolio-section {
+    grid-template-columns: repeat(3, 1fr); }
+    .portfolio-section .portfolio-item {
+      min-height: 40vh;
+      font-size: 16px; }
+      .portfolio-section .portfolio-item:nth-child(1) {
+        grid-column: 1/3; }
+      .portfolio-section .portfolio-item:nth-child(4) {
+        grid-column: 2/4; }
+      .portfolio-section .portfolio-item:nth-child(5) {
+        grid-column: 1/3;
+        grid-row: initial; }
+      .portfolio-section .portfolio-item:nth-child(6) {
+        grid-column: initial;
+        grid-row: initial; }
+
+  .blog-home {
+    grid-template-columns: repeat(2, 1fr); }
+
+  .buttoncase {
+    grid-column: 1/3; } }
+@media only screen and (max-width: 768px) {
+  .header-content {
+    padding: 40px 20px; }
+    .header-content h1 {
+      font-size: 50px; }
+
+  .landing-section {
+    padding: 50px 0; }
+    .landing-section h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 26px; }
+    .landing-section .container {
+      grid-template-columns: 1fr; }
+      .landing-section .container > div {
+        padding: 0 8%; }
+        .landing-section .container > div.ready-left {
+          border: none; }
+    .landing-section .blog-home {
+      grid-template-columns: 1fr; }
+      .landing-section .blog-home .blog-item:nth-child(3) {
+        grid-column: initial; }
+      .landing-section .blog-home .blog-item:nth-child(4) {
+        grid-column: initial; }
+      .landing-section .blog-home .buttoncase {
+        grid-column: 1/2; }
+
+  .form-section form {
+    grid-template-columns: 1fr 1fr; } }
+@media only screen and (max-width: 480px) {
+  .header-content h1 {
+    font-size: 40px; }
+
+  .portfolio-section {
+    grid-template-columns: 1fr; }
+    .portfolio-section .portfolio-item {
+      min-height: 50vh; }
+      .portfolio-section .portfolio-item:nth-child(1) {
+        grid-column: initial; }
+      .portfolio-section .portfolio-item:nth-child(4) {
+        grid-column: initial; }
+      .portfolio-section .portfolio-item:nth-child(5) {
+        grid-column: initial; }
+
+  .buttoncase {
+    grid-column: 1/2; }
+
+  .form-section form {
+    grid-template-columns: 1fr; } }
