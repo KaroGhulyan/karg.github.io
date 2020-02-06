@@ -26,12 +26,15 @@ dl,
 dd {
   margin: 0;
 }
+
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: "raleway-grid";
+  color: #333;
 }
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
