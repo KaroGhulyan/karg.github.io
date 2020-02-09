@@ -3,25 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-.container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-rows: 1fr;
-}
 
-.green {
-  grid-column: span 2;
-  grid-row: 1/5;
-}
-.red {
-  /* grid-row: 2/5; */
-}
 .zone {
+  padding: 30px 50px;
+  margin: 40px 60px;
   cursor: pointer;
-  /* display: inline-block; */
-  text-align: center;
-  font-size: 10em;
+  display: inline-block;
+  color: #fff;
+  font-size: 2em;
   border-radius: 4px;
   border: 1px solid #bbb;
   transition: all 0.3s linear;
@@ -37,12 +26,18 @@
   box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
     inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
 }
-
+a {
+  color: white;
+  text-decoration: none;
+}
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
 /***********************************************************************
  *  Green Background
  **********************************************************************/
 .green {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
   background: #56b870; /* Old browsers */
   background: -moz-linear-gradient(top, #56b870 0%, #a5c956 100%); /* FF3.6+ */
   background: -webkit-gradient(
@@ -66,31 +61,27 @@
   background: linear-gradient(top, #56b870 0%, #a5c956 100%); /* W3C */
 }
 
+.green a {
+  margin-right: 10px;
+  transition: color 0.5s ease;
+}
+.green a:hover {
+  color: tomato;
+}
+
 /***********************************************************************
  *  Red Background
  **********************************************************************/
 .red {
-  background: #c655be; /* Old browsers */
-  background: -moz-linear-gradient(top, #c655be 0%, #cf0404 100%); /* FF3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0%, #c655be),
-    color-stop(100%, #cf0404)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-    top,
-    #c655be 0%,
-    #cf0404 100%
-  ); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(
-    top,
-    #c655be 0%,
-    #cf0404 100%
-  ); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #c655be 0%, #cf0404 100%); /* IE10+ */
-  background: linear-gradient(top, #c655be 0%, #cf0404 100%); /* W3C */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: 0;
+  background-image: url(img/undraw.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 /***********************************************************************
@@ -124,6 +115,11 @@
  *  Blue Background
  **********************************************************************/
 .blue {
+  margin: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
   background: #7abcff; /* Old browsers */
   background: -moz-linear-gradient(
     top,
@@ -164,76 +160,20 @@
     #4096ee 100%
   ); /* W3C */
 }
-
-/***********************************************************************
- *  Purple Background
- **********************************************************************/
-.purple {
-  background: #a88beb; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #a88beb 0%,
-    #f1a7f1 44%,
-    #f8ceec 100%
-  ); /* FF3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0%, #a88beb),
-    color-stop(44%, #f1a7f1),
-    color-stop(100%, #f8ceec)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-    top,
-    #a88beb 0%,
-    #f1a7f1 44%,
-    #f8ceec 100%
-  ); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(
-    top,
-    #a88beb 0%,
-    #f1a7f1 44%,
-    #f8ceec 100%
-  ); /* Opera 11.10+ */
-  background: -ms-linear-gradient(
-    top,
-    #a88beb 0%,
-    #f1a7f1 44%,
-    #f8ceec 100%
-  ); /* IE10+ */
-  background: linear-gradient(
-    top,
-    #a88beb 0%,
-    #f1a7f1 44%,
-    #f8ceec 100%
-  ); /* W3C */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: grid; */
+  background-color: #444;
+  padding: 130px;
+  height: 300px;
 }
 
-/***********************************************************************
- *  Brown Background
- **********************************************************************/
-.brown {
-  background: #f6e6b4; /* Old browsers */
-  background: -moz-linear-gradient(top, #f6e6b4 0%, #ed9017 100%); /* FF3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0%, #f6e6b4),
-    color-stop(100%, #ed9017)
-  ); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-    top,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(
-    top,
-    #f6e6b4 0%,
-    #ed9017 100%
-  ); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #f6e6b4 0%, #ed9017 100%); /* IE10+ */
-  background: linear-gradient(top, #f6e6b4 0%, #ed9017 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=0 ); /* IE6-9 */
+.box img {
+  width: 100%;
+  /* height: 100px; */
+  /* width: 100%;
+  height: 100%;
+  object-fit: contain; */
 }
