@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url(https://downloader.disk.yandex.ru/preview/35647b370c3525ba3aafaa790298a119bea6f8d26651ea0a3855a07a9eac6827/5e4498a6/kZ2ilAy8OGq5yUeziZOBVayCoN9XdOcE9yOAGCa5t3VNbej-EX41mQYDFCHdf30cQ4uaWx-Y1fqOJuVv2dezBA==?uid=0&filename=wildgo.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&tknv=v2&owner_uid=1130000043030373&size=2048x2048);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  bottom: 0;
+  font-family: "Open Sans";
+  overflow: hidden;
+  position: relative;
+}
+nav h2 span {
+  color: gray;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li {
+  list-style: none;
+}
+.flex {
+  display: flex;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+nav ul > li a::after {
+  content: "";
+  border-bottom: 2px solid white;
+  display: block;
+  transform: scale(0);
+  transition: 0.2s all ease;
+  padding-top: 5px;
+}
+nav ul > li a:hover::after {
+  transform: scale(1);
+}
+nav ul ul {
+  position: absolute;
+  display: none;
+  padding: 0;
+}
+nav li {
+  position: relative;
+  padding: 10px 30px;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+}
+nav li a::before {
+  position: absolute;
+  content: "\f078";
+  font-family: fontAwesome;
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  display: none;
+}
+nav li:hover > a::before {
+  display: block;
+}
+nav ul > li {
+  margin-right: 30px;
+}
+nav > ul li:hover > ul {
+  display: block;
+}
+nav > ul > li > ul {
+  left: 0;
+}
+nav > ul > li > ul > li ul {
+  right: -98%;
+  top: 0;
+}
+nav i {
+  color: white;
+}
+main {
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  background-color: rgba(0, 0, 0, 0.35);
+  position: relative;
+  user-select: none;
+  /* z-index: 100; */
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-color: gray;
+  border-radius: 10px;
+  width: 30vw;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15vw;
+  margin-top: -15vh;
+  color: white;
+}
+.modal p {
+  font-size: 2em;
+  line-height: 0;
+}
+.modal button {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: 0.5s color ease;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.modal button:hover {
+  background-color: white;
+  color: black;
+}
