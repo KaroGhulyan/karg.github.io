@@ -1,4 +1,7 @@
 /* Указываем box sizing */
+html {
+  height: 100%;
+}
 *,
 *::before,
 *::after {
@@ -32,6 +35,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  position: relative;
 }
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],

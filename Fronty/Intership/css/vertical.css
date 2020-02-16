@@ -59,7 +59,7 @@ nav li {
   background-color: black;
   text-align: center;
 }
-nav > li + li a::before {
+nav li + li a::before {
   position: absolute;
   content: "\f078";
   font-family: fontAwesome;
@@ -93,26 +93,31 @@ nav i {
 }
 
 main {
+  display: table-cell;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.35);
   position: relative;
   user-select: none;
+  text-align: center;
+  width: 100vmax;
+  vertical-align: middle;
 }
 .modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 5rem;
   background-color: gray;
   border-radius: 10px;
   color: white;
+  /* margin: 0 auto; */
+  /* margin-top: 25vh; */
+  /* line-height: 50vh; */
+  /* display: inline-block; */
+  vertical-align: bottom;
+  /* text-align: center; */
+  /* vertical-align: middle; */
+  /* vertical-align: center; */
 }
 .modal p {
   font-size: 2rem;
@@ -133,3 +138,14 @@ main {
   background-color: white;
   color: black;
 }
+/* div {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 2px dashed #f69c55;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+} */
