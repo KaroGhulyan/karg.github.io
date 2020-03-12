@@ -1,0 +1,31 @@
+// colors
+$theme-colors: (
+  "red": #e90606,
+  "white": #fff
+);
+$font-size-base: 1.1rem;
+nav {
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
+  .collapse {
+    // position: absolute;
+    // right: 0;
+    // top: 100%;
+  }
+  .collapsing {
+    // text-align: left;
+    // display: flex;
+    // justify-content: flex-end;
+    // position: relative;
+    // align-items: center;
+    // position: absolute;
+    // right: 0;
+
+    // top: 100%;
+    // right: 100%;
+  }
+}
+
+@import "./node_modules/bootstrap/scss/bootstrap";

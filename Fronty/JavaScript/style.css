@@ -1,0 +1,18 @@
+/* html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+ul img {
+    object-fit: scale-down;
+    /* object-fit: ; */
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+}

@@ -1,0 +1,23 @@
+$theme-colors: ('orangered':#e45919,
+  'asphalt': #aaa09d);
+
+body {
+  height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+i {
+  font-size: 2rem;
+  transform: scale(1);
+  transition: 0.3s transform ease;
+
+  &:hover {
+    color: lightseagreen;
+    transform: scale(1.2);
+  }
+}
+
+@import "./node_modules/bootstrap/scss/bootstrap";
