@@ -17,46 +17,49 @@
       <div class="row">
         <div class="col-md-4">
           <div class="form-group p-0 m-1 m-md-0">
-            <select id="inputState" class="form-control border-0">
-              <option selected>Choose category</option>
-              <option>Work</option>
-              <option>Sport</option>
-              <option>University</option>
+            <select id='inputListCategory' class="form-control border-0">
+              <option class="options"  selected>Choose category</option>
+              <option class="options" value="Work">Work</option>
+              <option class="options" value="Sport">Sport</option>
+              <option class="options" value="University">University</option>
             </select>
           </div>
         </div>
         <div class="col-md-4">
           <div class="input-group m-1 m-md-0">
-            <input type="date" class="form-control text-center" placeholder="" aria-label=""
-              aria-describedby="basic-addon1" />
+            <input type="date" class="form-control text-center border-0"
+              aria-describedby="basic-addon1" id="deadlineDate" value=""/>
           </div>
         </div>
         <div class="col-md-4">
           <div class="input-group m-1 m-md-0">
-            <input type="text" class="form-control" placeholder="ToDo" aria-label="" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control border-0" placeholder="ToDo" id="todotext" aria-describedby="basic-addon1" />
             <div class="input-group-prepend">
-              <button class="btn btn-orangered" type="button">
+              <button class="btn btn-orangered" type="button" onclick="addItem()">
                 Add
               </button>
+              <!-- <button class="btn btn-orangered" type="button" onclick="Show_()">
+                Show
+              </button> -->
             </div>
           </div>
-
         </div>
       </div>
     </div>
-
   </nav>
 
   <main class="container">
-
     <div class="row justify-content-between m-0">
-      <div class="btn-group">
-        <button type="button" class="btn btn-orangered">All</button>
-        <button type="button" class="btn btn-orangered">Work</button>
-        <button type="button" class="btn btn-orangered">Sport</button>
-        <button type="button" class="btn btn-orangered">University</button>
+    <!-- Filter -->
+
+      <div class="btn-group" id="btn-groupAll">
+        <button type="button" class="btn btn-orangered" id="All" value="All" selected>All</button>
+        <button type="button" class="btn btn-orangered" id="Work" value="Work">Work</button>
+        <button type="button" class="btn btn-orangered" id="Sport" value="Sport">Sport</button>
+        <button type="button" class="btn btn-orangered" id="University" value="University">University</button>
       </div>
-      
+
+      <!-- Sort -->
       <div class="form-group p-0 m-1 m-md-0  form-group-bg-orangered">
         <select id="inputState" class="form-control border-0 bg-orangered text-white">
           <option selected>Sort By...</option>
@@ -67,7 +70,6 @@
         </select>
       </div>
     </div>
-    <!-- Filter -->
 
 
     <!-- Modal -->
@@ -92,7 +94,7 @@
                 <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="ToDo">
               </div>
               <div class="form-group p-0 m-1 m-md-0 border">
-                <select id="inputState" class="form-control border-0">
+                <select id="inputState1" class="form-control border-0">
                   <option selected>Choose category</option>
                   <option>Work</option>
                   <option>Sport</option>
@@ -103,7 +105,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-orangered">Save changes</button>
+            <button type="button" class="btn btn-orangered" id="submit" onclick="">Save changes</button>
           </div>
         </div>
       </div>
@@ -111,9 +113,9 @@
     <!-- Table -->
 
     <div class="table-responsive text-nowrap">
-      <table class="table table-borderlesss rounded  bg-white">
+      <table class="table table-borderless rounded  bg-white" id="table">
         <thead class="text-center text-primary">
-          <tr class="shadow-sm">
+          <tr class="shadow-sm text-info">
             <th scope="col">#</th>
             <th scope="col">Completed</th>
             <th scope="col">Categories</th>
@@ -124,83 +126,13 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
-        <tbody class="text-center">
-          <tr class="shadow-sm">
-            <th scope="row">1</th>
-            <th scope="row"><i class="far fa-check-circle cursor-pointer"></i></th>
-            <td>Sport</td>
-            <td>Go To Gym</td>
-            <td>20/03/2020</td>
-            <td>20/03/2020</td>
-            <td class="text-secondary">
-              <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                <i class="far fa-edit"></i>
-              </button>
-            </td>
-            <td class="text-danger">
-              <button class="btn p-0 m-0">
-                <i class="far fa-trash-alt text-danger"></i>
-              </button>
-            </td>
-          </tr>
-          <tr class="shadow-sm">
-            <th scope="row">2</th>
-            <th scope="row"><i class="far fa-check-circle cursor-pointer"></i></th>
-            <td>University</td>
-            <td>Red Book</td>
-            <td>20/03/2020</td>
-            <td>20/03/2020</td>
-            <td class="text-secondary">
-              <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                <i class="far fa-edit"></i>
-              </button>
-            </td>
-            <td class="text-danger">
-              <button class="btn p-0 m-0">
-                <i class="far fa-trash-alt text-danger"></i>
-              </button>
-            </td>
-          </tr>
-          <tr class="shadow-sm">
-            <th scope="row">3</th>
-            <th scope="row"><i class="far fa-check-circle cursor-pointer"></i></th>
-            <td>University</td>
-            <td>Red Book</td>
-            <td>20/03/2020</td>
-            <td>20/03/2020</td>
-            <td class="text-secondary">
-              <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                <i class="far fa-edit"></i>
-              </button>
-            </td>
-            <td class="text-danger">
-              <button class="btn p-0 m-0">
-                <i class="far fa-trash-alt text-danger"></i>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <th scope="row"><i class="far fa-check-circle cursor-pointer"></i></th>
-            <td>University</td>
-            <td>Red Book</td>
-            <td>20/03/2020</td>
-            <td>20/03/2020</td>
-            <td class="text-secondary">
-              <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                <i class="far fa-edit"></i>
-              </button>
-            </td>
-            <td class="text-danger">
-              <button class="btn p-0 m-0">
-                <i class="far fa-trash-alt text-danger"></i>
-              </button>
-            </td>
-          </tr>
+        <tbody class="text-center" id="root">
+          
         </tbody>
       </table>
     </div>
   </main>
+  <script src="./js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -210,7 +142,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <scr`ipt src="node_modules/bootstrap/dist/js/bootstrap.min.js">
     </script>
 </body>
