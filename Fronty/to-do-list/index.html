@@ -11,74 +11,47 @@
   <title>Document</title>
 </head>
 
-<body class="bg-info">
-  <nav class="bg-asphalt mb-3 py-3 sticky-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="form-group p-0 m-1 m-md-0">
-            <select id='inputListCategory' class="form-control border-0">
-              <option class="options"  selected>Choose category</option>
-              <option class="options" value="Work">Work</option>
-              <option class="options" value="Sport">Sport</option>
-              <option class="options" value="University">University</option>
-            </select>
+<body class="bg-cream">
+  <header>
+    <nav class="bg-indigoblue mb-3 py-3 sticky-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group p-0 m-1 m-md-0">
+              <select id='inputListCategory' class="form-control border-0">
+                <option class="options"  selected>Choose category</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="input-group m-1 m-md-0">
-            <input type="date" class="form-control text-center border-0"
-              aria-describedby="basic-addon1" id="deadlineDate" value=""/>
+          <div class="col-md-4">
+            <div class="input-group m-1 m-md-0">
+              <input type="datetime-local" class="form-control text-center border-0"
+                aria-describedby="basic-addon1" id="deadlineDate" value=""/>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="input-group m-1 m-md-0">
-            <input type="text" class="form-control border-0" placeholder="ToDo" id="todotext" aria-describedby="basic-addon1" />
-            <div class="input-group-prepend">
-              <button class="btn btn-orangered" type="button" onclick="addItem()">
-                Add
-              </button>
-              <!-- <button class="btn btn-orangered" type="button" onclick="Show_()">
-                Show
-              </button> -->
+          <div class="col-md-4">
+            <div class="input-group m-1 m-md-0" >
+              <input type="text" class="form-control border-0" placeholder="ToDo" id="todotext" aria-describedby="basic-addon1" />
+              <div class="input-group-prepend">
+                <button class="btn btn-lightgeen" type="button"  id="addbtn" onclick="addItems(data)">
+                  Add
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main class="container">
-    <div class="row justify-content-between m-0">
-    <!-- Filter -->
-
-      <div class="btn-group" id="btn-groupAll">
-        <button type="button" class="btn btn-orangered" id="All" value="All" selected>All</button>
-        <button type="button" class="btn btn-orangered" id="Work" value="Work">Work</button>
-        <button type="button" class="btn btn-orangered" id="Sport" value="Sport">Sport</button>
-        <button type="button" class="btn btn-orangered" id="University" value="University">University</button>
-      </div>
-
-      <!-- Sort -->
-      <div class="form-group p-0 m-1 m-md-0  form-group-bg-orangered">
-        <select id="inputState" class="form-control border-0 bg-orangered text-white">
-          <option selected>Sort By...</option>
-          <option>Categories</option>
-          <option>Activity</option>
-          <option>Created</option>
-          <option>Deadline</option>
-        </select>
-      </div>
-    </div>
-
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><i class="far fa-edit"></i>Edit</h5>
+            <h5 class="modal-title" id="edit"><i class="far fa-edit"></i>Edit</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -86,15 +59,15 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="formGroupExampleInput" class="cursor-pointer">Activity</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ToDo">
+                <label for="activity" class="cursor-pointer">Activity</label>
+                <input type="text" class="form-control" id="activity" placeholder="ToDo">
               </div>
               <div class="form-group">
-                <label for="formGroupExampleInput2" class="cursor-pointer">Deadline</label>
-                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="ToDo">
+                <label for="deadline" class="cursor-pointer">Deadline</label>
+                <input type="date" class="form-control" id="deadline" placeholder="ToDo">
               </div>
               <div class="form-group p-0 m-1 m-md-0 border">
-                <select id="inputState1" class="form-control border-0">
+                <select id="selectCategory" class="form-control border-0">
                   <option selected>Choose category</option>
                   <option>Work</option>
                   <option>Sport</option>
@@ -103,33 +76,82 @@
               </div>
             </form>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer" id="modal-group">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-orangered" id="submit" onclick="">Save changes</button>
+            <button type="button" class="btn btn-orangered" id="submit">Save changes</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- Table -->
-
-    <div class="table-responsive text-nowrap">
-      <table class="table table-borderless rounded  bg-white" id="table">
-        <thead class="text-center text-primary">
-          <tr class="shadow-sm text-info">
-            <th scope="col">#</th>
-            <th scope="col">Completed</th>
-            <th scope="col">Categories</th>
-            <th scope="col">Activity</th>
-            <th scope="col">Created</th>
-            <th scope="col">Deadline</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody class="text-center" id="root">
+    <!-- Filter -->
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <div class="bg-indigoblue text-white text-center mt-2">
+          <h1 class="font-size-30 p-2">Filter by</h1>
+        </div>
+        <form class="form" id="checkbox-parentTag">
+          <!-- <div class="inputGroup">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">Option One</label>
+          </div> -->
           
-        </tbody>
-      </table>
+          <!-- <div class="inputGroup">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">Option Two</label>
+          </div>  -->
+          
+          <!-- <h2>Radio Buttons</h2>
+          <div class="inputGroup">
+            <input id="radio1" name="radio" type="radio"/>
+            <label for="radio1">Yes</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio2" name="radio" type="radio"/>
+            <label for="radio2">No</label>
+          </div> -->
+        </form>
+      </div>
+
+    <!-- Table -->
+      <div class="table-responsive text-nowrap col-md">
+        <table class="table table-borderless   bg-white" id="table">
+          <thead class="text-center text-primary">
+            <tr class="shadow-sm text-info bg-indigoblue text-light" id="sort-category">
+              <th scope="col">#</th>
+              <th scope="col">Completed</th>
+              <th scope="col">
+                <button class="btn p-0 m-0 text-light" value="Categories">
+                Categories
+                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
+                </button>
+              </th>
+              <th scope="col">
+                <button class="btn p-0 m-0 text-light" value="Activity">
+                Activity
+                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
+                </button>
+              </th>
+              <th scope="col">
+                <button class="btn p-0 m-0 text-light" value="Created">
+                Created
+                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
+                </button>
+              </th>
+              <th scope="col">
+                <button class="btn p-0 m-0 text-light" value="Deadline">
+                Deadline
+                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
+                </button>
+              </th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody class="text-center" id="root">
+            
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
   <script src="./js/script.js"></script>
