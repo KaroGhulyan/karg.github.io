@@ -142,33 +142,26 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control text-center"
+              id="searchPanel"
+              aria-describedby="emailHelp"
+              placeholder="search"
+            />
+          </div>
+        </div>
+      </div>
       <!-- Filter -->
-      <div class="row mt-3">
+      <div class="row">
         <div class="col-md-3">
           <div class="bg-indigoblue text-white text-center mt-2">
             <h1 class="font-size-30 p-2">Filter by</h1>
           </div>
-          <form class="form" id="checkbox-parentTag">
-            <!-- <div class="inputGroup1 rounded">
-              <input
-                id="all"
-                name="option${index} "
-                type="checkbox"
-                value="All"
-                data-name="All"
-              />
-              <label for="all">All</label>
-            </div> -->
-            <!-- <h2>Radio Buttons</h2>
-          <div class="inputGroup">
-            <input id="radio1" name="radio" type="radio"/>
-            <label for="radio1">Yes</label>
-          </div>
-          <div class="inputGroup">
-            <input id="radio2" name="radio" type="radio"/>
-            <label for="radio2">No</label>
-          </div> -->
-          </form>
+          <form class="form" id="checkbox-parentTag"></form>
         </div>
 
         <!-- Table -->
@@ -182,7 +175,11 @@
                 <th scope="col">#</th>
                 <th scope="col">Completed</th>
                 <th scope="col">
-                  <button class="btn p-0 m-0 text-light" value="Categories">
+                  <button
+                    class="btn p-0 m-0 text-light"
+                    value="Category"
+                    data-category="Category"
+                  >
                     Categories
                     <i
                       class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
@@ -190,7 +187,11 @@
                   </button>
                 </th>
                 <th scope="col">
-                  <button class="btn p-0 m-0 text-light" value="Activity">
+                  <button
+                    class="btn p-0 m-0 text-light"
+                    value="Activity"
+                    data-activity="Activity"
+                  >
                     Activity
                     <i
                       class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
@@ -198,7 +199,11 @@
                   </button>
                 </th>
                 <th scope="col">
-                  <button class="btn p-0 m-0 text-light" value="Created">
+                  <button
+                    class="btn p-0 m-0 text-light"
+                    value="Created"
+                    data-created="Created"
+                  >
                     Created
                     <i
                       class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
@@ -206,7 +211,11 @@
                   </button>
                 </th>
                 <th scope="col">
-                  <button class="btn p-0 m-0 text-light" value="Deadline">
+                  <button
+                    class="btn p-0 m-0 text-light"
+                    value="Deadline"
+                    data-deadline="Deadline"
+                  >
                     Deadline
                     <i
                       class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"

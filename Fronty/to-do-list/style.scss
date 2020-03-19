@@ -25,6 +25,11 @@ main i {
   }
 }
 
+.table-responsive thead button i {
+  &:hover {
+    transform: translateY(-180deg);
+  }
+}
 
 
 @import "./node_modules/bootstrap/scss/bootstrap";

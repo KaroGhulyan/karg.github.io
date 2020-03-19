@@ -22,6 +22,11 @@ main i:hover {
           transform: scale(1.2);
 }
 
+.table-responsive thead button i:hover {
+  -webkit-transform: translateY(-180deg);
+          transform: translateY(-180deg);
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -12604,8 +12609,7 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   text-decoration: line-through;
 }
 
-.inputGroup,
-.inputGroup1 {
+.inputGroup {
   background-color: #fff;
   display: block;
   margin: 10px 0;
@@ -12616,16 +12620,14 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   transition: 0.3s all ease-in-out;
 }
 
-.inputGroup:hover,
-.inputGroup1:hover {
+.inputGroup:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
-.inputGroup label,
-.inputGroup1 label {
+.inputGroup label {
   padding: 12px 30px;
   width: 100%;
   display: block;
@@ -12639,8 +12641,7 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   overflow: hidden;
 }
 
-.inputGroup label:before,
-.inputGroup1 label:before {
+.inputGroup label:before {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -12657,8 +12658,7 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   z-index: -1;
 }
 
-.inputGroup label:after,
-.inputGroup1 label:after {
+.inputGroup label:after {
   width: 32px;
   height: 32px;
   content: '';
@@ -12679,26 +12679,22 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   transition: all 200ms ease-in;
 }
 
-.inputGroup input:checked ~ label,
-.inputGroup1 input:checked ~ label {
+.inputGroup input:checked ~ label {
   color: #fff;
 }
 
-.inputGroup input:checked ~ label:before,
-.inputGroup1 input:checked ~ label:before {
+.inputGroup input:checked ~ label:before {
   -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
           transform: translate(-50%, -50%) scale3d(56, 56, 1);
   opacity: 1;
 }
 
-.inputGroup input:checked ~ label:after,
-.inputGroup1 input:checked ~ label:after {
+.inputGroup input:checked ~ label:after {
   background-color: #54E0C7;
   border-color: #54E0C7;
 }
 
-.inputGroup input,
-.inputGroup1 input {
+.inputGroup input {
   width: 32px;
   height: 32px;
   -webkit-box-ordinal-group: 2;
