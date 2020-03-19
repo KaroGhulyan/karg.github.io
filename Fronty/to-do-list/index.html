@@ -1,106 +1,165 @@
 <!DOCTYPE html>
 <html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Document</title>
-</head>
-
-<body class="bg-cream">
-  <header>
-    <nav class="bg-indigoblue mb-3 py-3 sticky-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group p-0 m-1 m-md-0">
-              <select id='inputListCategory' class="form-control border-0">
-                <option class="options"  selected>Choose category</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="input-group m-1 m-md-0">
-              <input type="datetime-local" class="form-control text-center border-0"
-                aria-describedby="basic-addon1" id="deadlineDate" value=""/>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="input-group m-1 m-md-0" >
-              <input type="text" class="form-control border-0" placeholder="ToDo" id="todotext" aria-describedby="basic-addon1" />
-              <div class="input-group-prepend">
-                <button class="btn btn-lightgeen" type="button"  id="addbtn" onclick="addItems(data)">
-                  Add
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main class="container">
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="edit"><i class="far fa-edit"></i>Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="activity" class="cursor-pointer">Activity</label>
-                <input type="text" class="form-control" id="activity" placeholder="ToDo">
-              </div>
-              <div class="form-group">
-                <label for="deadline" class="cursor-pointer">Deadline</label>
-                <input type="date" class="form-control" id="deadline" placeholder="ToDo">
-              </div>
-              <div class="form-group p-0 m-1 m-md-0 border">
-                <select id="selectCategory" class="form-control border-0">
-                  <option selected>Choose category</option>
-                  <option>Work</option>
-                  <option>Sport</option>
-                  <option>University</option>
+  <body class="bg-cream">
+    <header>
+      <nav class="bg-indigoblue mb-3 py-3 sticky-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group p-0 m-1 m-md-0">
+                <select id="inputListCategory" class="form-control border-0">
+                  <option class="options" selected>Choose category</option>
                 </select>
               </div>
-            </form>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group m-1 m-md-0">
+                <input
+                  type="datetime-local"
+                  class="form-control text-center border-0"
+                  aria-describedby="basic-addon1"
+                  id="deadlineDate"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group m-1 m-md-0">
+                <input
+                  type="text"
+                  class="form-control border-0"
+                  placeholder="ToDo"
+                  id="todotext"
+                  aria-describedby="basic-addon1"
+                />
+                <div class="input-group-prepend">
+                  <button
+                    class="btn btn-lightgeen p-0 m-0 rounded-right"
+                    type="button"
+                    id="addbtn"
+                    onclick="addItems(data)"
+                  >
+                    <i class="fas fa-plus text-white px-3 font-size-25"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer" id="modal-group">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-orangered" id="submit">Save changes</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="edit">
+                <i class="far fa-edit"></i>Edit
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="activity" class="cursor-pointer">Activity</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="activity"
+                    placeholder="ToDo"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="deadline" class="cursor-pointer">Deadline</label>
+                  <input
+                    type="datetime-local"
+                    class="form-control text-center border-0"
+                    aria-describedby="basic-addon1"
+                    id="deadline"
+                    value=""
+                  />
+                </div>
+                <div class="form-group p-0 m-1 m-md-0 border">
+                  <select id="selectCategory" class="form-control border-0">
+                    <option selected>Choose category</option>
+                    <option>Work</option>
+                    <option>Sport</option>
+                    <option>University</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer" id="modal-group">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-orangered"
+                id="submit"
+                onclick="editItems()"
+              >
+                Save changes
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Filter -->
-    <div class="row mt-3">
-      <div class="col-md-3">
-        <div class="bg-indigoblue text-white text-center mt-2">
-          <h1 class="font-size-30 p-2">Filter by</h1>
-        </div>
-        <form class="form" id="checkbox-parentTag">
-          <!-- <div class="inputGroup">
-            <input id="option1" name="option1" type="checkbox"/>
-            <label for="option1">Option One</label>
-          </div> -->
-          
-          <!-- <div class="inputGroup">
-            <input id="option2" name="option2" type="checkbox"/>
-            <label for="option2">Option Two</label>
-          </div>  -->
-          
-          <!-- <h2>Radio Buttons</h2>
+      <!-- Filter -->
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <div class="bg-indigoblue text-white text-center mt-2">
+            <h1 class="font-size-30 p-2">Filter by</h1>
+          </div>
+          <form class="form" id="checkbox-parentTag">
+            <!-- <div class="inputGroup1 rounded">
+              <input
+                id="all"
+                name="option${index} "
+                type="checkbox"
+                value="All"
+                data-name="All"
+              />
+              <label for="all">All</label>
+            </div> -->
+            <!-- <h2>Radio Buttons</h2>
           <div class="inputGroup">
             <input id="radio1" name="radio" type="radio"/>
             <label for="radio1">Yes</label>
@@ -109,63 +168,76 @@
             <input id="radio2" name="radio" type="radio"/>
             <label for="radio2">No</label>
           </div> -->
-        </form>
-      </div>
+          </form>
+        </div>
 
-    <!-- Table -->
-      <div class="table-responsive text-nowrap col-md">
-        <table class="table table-borderless   bg-white" id="table">
-          <thead class="text-center text-primary">
-            <tr class="shadow-sm text-info bg-indigoblue text-light" id="sort-category">
-              <th scope="col">#</th>
-              <th scope="col">Completed</th>
-              <th scope="col">
-                <button class="btn p-0 m-0 text-light" value="Categories">
-                Categories
-                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
-                </button>
-              </th>
-              <th scope="col">
-                <button class="btn p-0 m-0 text-light" value="Activity">
-                Activity
-                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
-                </button>
-              </th>
-              <th scope="col">
-                <button class="btn p-0 m-0 text-light" value="Created">
-                Created
-                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
-                </button>
-              </th>
-              <th scope="col">
-                <button class="btn p-0 m-0 text-light" value="Deadline">
-                Deadline
-                  <i class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"></i>
-                </button>
-              </th>
-              <th scope="col">Edit</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody class="text-center" id="root">
-            
-          </tbody>
-        </table>
+        <!-- Table -->
+        <div class="table-responsive text-nowrap col-md">
+          <table class="table table-borderless   bg-white" id="table">
+            <thead class="text-center text-primary">
+              <tr
+                class="shadow-sm text-info bg-indigoblue text-light"
+                id="sort-category"
+              >
+                <th scope="col">#</th>
+                <th scope="col">Completed</th>
+                <th scope="col">
+                  <button class="btn p-0 m-0 text-light" value="Categories">
+                    Categories
+                    <i
+                      class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
+                    ></i>
+                  </button>
+                </th>
+                <th scope="col">
+                  <button class="btn p-0 m-0 text-light" value="Activity">
+                    Activity
+                    <i
+                      class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
+                    ></i>
+                  </button>
+                </th>
+                <th scope="col">
+                  <button class="btn p-0 m-0 text-light" value="Created">
+                    Created
+                    <i
+                      class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
+                    ></i>
+                  </button>
+                </th>
+                <th scope="col">
+                  <button class="btn p-0 m-0 text-light" value="Deadline">
+                    Deadline
+                    <i
+                      class="fas fa-chevron-down text-light  font-size-18 cursor-pointer"
+                    ></i>
+                  </button>
+                </th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody class="text-center" id="root"></tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </main>
-  <script src="./js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-  <scr`ipt src="node_modules/bootstrap/dist/js/bootstrap.min.js">
-    </script>
-</body>
-
+    </main>
+    <script src="./js/script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>

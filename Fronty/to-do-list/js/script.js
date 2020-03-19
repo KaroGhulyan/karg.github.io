@@ -1,8 +1,7 @@
-
 //Generate ID
 const genId = () => {
     let d = new Date().getTime();
-    let d2 = (performance && performance.now && (performance.now() * 1000)) || 0;
+    let d2 = (performance && performance.now && performance.now() * 1000) || 0;
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         let r = Math.random() * 16;
         if (d > 0) {
@@ -11,100 +10,209 @@ const genId = () => {
         } else {
             r = (d2 + r) % 16 | 0;
             d2 = Math.floor(d2 / 16);
-        };
-        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        }
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
     });
 };
 
 //All Data
 let data = [];
-let filterCategories = [
-    { name: "Work", value: "Work" },
-    { name: "Sport", value: "Sport" },
-    { name: "Home", value: "Home" },
-    { name: "University", value: "University" },
-    { name: "Shop", value: "Shop" },
-];
-
-// Render Select Categories
-const renderCategories = (data) => {
-    const categories = document.getElementById('inputListCategory');
-    let output = '';
-    data.forEach((el, index) => {
-        output += `
-                <option class="options" value='${el.value}'>${el.name}</option>
-            `;
-    })
-    categories.innerHTML = output;
+let filterCategories = [{
+    name: 'Work',
+    value: 'Work',
+    status: false
+},
+{
+    name: 'Sport',
+    value: 'Sport',
+    status: false
+},
+{
+    name: 'Home',
+    value: 'Home',
+    status: false
+},
+{
+    name: 'University',
+    value: 'University',
+    status: false
+},
+{
+    name: 'Shop',
+    value: 'Shop',
+    status: false
 }
+];
+// Render Select Categories
+const renderCategories = data => {
+    const categories = document.getElementById('inputListCategory');
+    const editcategories = document.getElementById('selectCategory');
+
+    let output = '';
+    data.forEach(el => {
+        output += `
+                  <option class="options" value='${el.value}'>${el.name}</option>
+              `;
+    });
+    categories.innerHTML = output;
+    editcategories.innerHTML = output;
+};
 renderCategories(filterCategories);
+
 // Render Filter Categories
-const renderFilter = (data) => {
+const renderFilter = data => {
     const chkParent = document.getElementById('checkbox-parentTag');
     let output = '';
-    data.forEach((el, index) => {
+    data.forEach((element, index, array) => {
         output += `
-            <div class="inputGroup">
-                <input id="option${index}" name="option${index}" type="checkbox" value='${el.value}'/>
-                <label for="option${index}">${el.name}</label>
-            </div>
-            `;
-    })
+              <div class="inputGroup rounded">
+                  <input id="option${index}" name="option${index} "type="checkbox" value='${element.value}'  data-name="${element.name}"/>
+                  <label for="option${index}">${element.name}</label>
+              </div>
+              `;
+    });
     chkParent.innerHTML = output;
-}
+};
 renderFilter(filterCategories);
+
+// function categoriesAllFalse() {
+//   filterCategories.forEach(element => {
+//     if (element.status === true) {
+//       console.log(element);
+
+//       return false;
+//     }
+//   });
+//   return true;
+// }
+
 //Render Table Elements
 const renderTableElement = (data) => {
-    const root = document.querySelector("#root");
+    const root = document.querySelector('#root');
     if (data.length !== 0) {
         let template = '';
-        data.forEach((element) => {
-            template += `
-                     <tr class="shadow-sm" id="tr">
-                     <th scope="row" class='text-info'>#</th>
-                     <th scope="row"><i class="far fa-check-circle cursor-pointer  ${element.completed ? 'text-success' : "text-orangered"}" onclick="completedStatus('${element.id}')"></i></th>
-                     <td class="font-weight-bold">${element.category}</td>
-                     <td class='${element.completed ? 'text-line-through font-weight-bold' : "text-dark"}'>${element.activity}</td>
-                     <td class="text-info font-weight-bold">${element.createdDate}</td>
-                     <td class="text-info font-weight-bold">${element.deadline}</td>
-                     <td class="text-secondary">
-                     <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                         <i class="far fa-edit"></i>
-                     </button>
-                     </td>
-                     <td class="text-danger" id="btn-group">
-                     <button class="btn p-0 m-0 trashbtn"  onclick="deleteItems('${element.id}')">
-                         <i class="far fa-trash-alt text-orangered"></i>
-                     </button>
-                     </td>
-                 </tr>
-                     `;
+        data.forEach(element => {
+            if (filterCategories.find(item => item.name === element.category).status === true) {
+                template += `
+                       <tr class="shadow-sm" id="tr">
+                       <th scope="row" class='text-info'>#</th>
+                       <th scope="row"><i class="far fa-check-circle cursor-pointer  ${
+                    element.completed ? 'text-success' : 'text-orangered'
+                    }" onclick="completedStatus('${element.id}')"></i></th>
+                       <td class='${
+                    element.completed
+                        ? 'font-weight-bold text-muted'
+                        : 'font-weight-bold'
+                    }'>${element.category}</td>
+                       <td class='${
+                    element.completed
+                        ? 'text-line-through font-weight-bold text-muted'
+                        : 'text-dark'
+                    }'>${element.activity}</td>
+                       <td class='${
+                    element.completed
+                        ? 'font-weight-bold text-muted'
+                        : 'text-info font-weight-bold'
+                    }'>${element.createdDate}</td>
+                       <td class='${
+                    element.completed
+                        ? 'font-weight-bold text-muted'
+                        : 'text-info font-weight-bold'
+                    }'>${element.deadline}</td>
+                       <td class="text-secondary">
+                       <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
+                           <i class="far fa-edit"></i>
+                       </button>
+                       </td>
+                       <td class="text-danger" id="btn-group">
+                       <button class="btn p-0 m-0 trashbtn"  onclick="deleteItems('${
+                    element.id
+                    }')">
+                           <i class="far fa-trash-alt text-orangered"></i>
+                       </button>
+                       </td>
+                   </tr>
+                       `;
+            }
         });
         root.innerHTML = template;
     } else {
-        root.innerHTML = "";
+        root.innerHTML = '';
     }
-}
+};
 
 
-const addItems = (data) => {
+
+const filterTogglerstatus = document
+    .querySelectorAll('.inputGroup > input')
+    .forEach(element => {
+        element.addEventListener('click', () => {
+            const name = element.dataset.name;
+            // const status = element.dataset.status;
+            // const value = element.dataset.value;
+
+            // if (status) {
+            //     element.setAttribute('checked', false);
+            // }
+            filterCategories.forEach(element => {
+                if (element.name === name) {
+                    if (!element.status) {
+                        element.status = true;
+                    } else {
+                        element.status = false;
+                    }
+                }
+                renderTableElement(data);
+                // console.log(element.status);
+            });
+            console.log(filterCategories)
+            // if (name === value) {
+            //     console.log(element);
+            // }
+        });
+    });
+
+// const editItems = () => {
+//     let category;
+//     document.querySelectorAll('#selectCategory > option').forEach(element => {
+//         if (element.selected) category = element.value;
+//     });
+//     const activity = document.querySelector('#activity').value;
+//     const deadline = document.querySelector('#deadline').value.replace('T', ' ');
+
+//     data.forEach(element => {
+//         if (element.id) {
+//             data.push({
+//                 category,
+//                 activity,
+//                 deadline
+//             });
+//         }
+//     });
+// };
+
+
+//Add Items to Data
+const addItems = data => {
     const category = selectedCategory();
     const activity = document.querySelector('#todotext').value;
-    const deadline = document.querySelector('#deadlineDate').value.replace('T', ' ');
+    const deadline = document
+        .querySelector('#deadlineDate')
+        .value.replace('T', ' ');
     const createdDate = new Date().toISOString().substr(0, 10);
 
     if (activity.trim() === '' || deadline === '') {
-        alert('something goes wrong')
+        alert('something goes wrong');
         return;
-    };
+    }
     data.push({
         id: genId(),
         completed: false,
         activity,
         category,
         deadline,
-        createdDate,
-    })
+        createdDate
+    });
 
     // console.log(data);
     renderTableElement(data);
@@ -112,42 +220,40 @@ const addItems = (data) => {
 // Select Category
 const selectedCategory = () => {
     let category;
-    document.querySelectorAll("#inputListCategory > option").forEach(element => {
-        if (element.selected)
-            category = element.value;
-    })
-    return category
-}
+    document.querySelectorAll('#inputListCategory > option').forEach(element => {
+        if (element.selected) category = element.value;
+    });
+    return category;
+};
 const deleteItems = id => {
+    // const index = data.findIndex(el => el.id === id);
+    // const before = data.slice(0, index);
+    // const after = data.slice(index + 1);
+    // const newArray = [...before, ...after];
+    // if (index > -1) {
+    //     renderTableElement(newArray);
+    // };
     const index = data.findIndex(el => el.id === id);
     if (index > -1) {
         data.splice(index, 1);
         renderTableElement(data);
-    };
+    }
 };
 // completedStatus
-const completedStatus = (id) => {
-    console.log(id)
+const completedStatus = id => {
+    console.log(id);
     data.forEach(element => {
         if (element.id === id) {
             if (!element.completed) {
                 element.completed = true;
-                renderTableElement(data)
             } else {
                 element.completed = false;
-                renderTableElement(data);
             }
         }
-    })
-}
+    });
 
-
-
-
-
-
-
-
+    renderTableElement(data);
+};
 
 // function genId() {
 //     let d = new Date().getTime();
@@ -184,7 +290,7 @@ const completedStatus = (id) => {
 //         this.allList.push(item)
 //         this.universityList.push(item)
 //     }
-//     //Tabel Elements 
+//     //Tabel Elements
 //     tableElement(element) {
 //         let output = `
 //         <tr class="shadow-sm" id="tr">
@@ -542,7 +648,3 @@ const completedStatus = (id) => {
 //     renderList();
 //     // console.log(data.allsList)
 // })
-
-
-
-
