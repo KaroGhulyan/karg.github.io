@@ -57,11 +57,18 @@ $fontSizesMax: 60 !default;
   }
 }
 
+
+
+.rotateIcons {
+  transform: rotate(180deg) !important;
+}
+
 .text-line-through {
   text-decoration: line-through;
 }
 
-.inputGroup {
+.inputGroup,
+.inputGroup1 {
   background-color: #fff;
   display: block;
   margin: 10px 0;

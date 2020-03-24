@@ -1,0 +1,102 @@
+const renderFilter = data => {
+    const chkParent = document.getElementById('checkbox-parentTag');
+    let output = '';
+    data.forEach((element, index, array) => {
+        output += `
+              <div class="inputGroup rounded">
+                  <input id="option${index}" name="option${index} "type="checkbox" value='${element.value}'  data-name="${element.name}"/>
+                  <label for="option${index}">${element.name}</label>
+              </div>
+              `;
+    });
+    chkParent.innerHTML = output;
+};
+renderFilter(filterCategories);
+//Render Table Elements
+const renderTableElement = (data, pageNumber) => {
+    // Update totalPages after render elements
+    totalPages = Math.ceil(data.length / itemsPerPage);
+    // Update pagination after render elements
+    renderPagination(page);
+    const root = document.querySelector('#root');
+    if (data.length !== 0) {
+        let template = '';
+        let count = itemsPerPage;
+        data.slice((pageNumber - 1) * itemsPerPage, pageNumber * itemsPerPage).forEach(element => {
+            if (count === 0) {
+                return;
+            }
+            if (filterCategories.find(item => item.name === element.category).status === true) {
+                count--;
+                template += `
+                       <tr class="shadow-sm">
+                          <th scope="row" class='text-info'>#</th>
+                          <th scope="row">
+                           <i class="far fa-check-circle cursor-pointer  ${element.completed ? 'text-success' : 'text-orangered'}" onclick="completedStatus('${element.id}')"></i></th>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'font-weight-bold'}'>${element.category}</td>
+                          <td class='${element.completed ? 'text-line-through font-weight-bold text-muted' : 'text-dark activityText'}'>${element.activity}</td>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.createdDate}</td>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.deadline}</td>
+                          <td class="text-secondary">
+                            <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
+                            <i class="far fa-edit"></i>
+                            </button>
+                          </td>
+                          <td class="text-danger" id="btn-group">
+                            <button class="btn p-0 m-0 trashbtn"  onclick="deleteItems('${element.id}', ${pageNumber})">
+                              <i class="far fa-trash-alt text-orangered"></i>
+                            </button>
+                          </td>
+                      </tr>
+                       `;
+            }
+        });
+        root.innerHTML = template;
+    } else {
+        root.innerHTML = '';
+    }
+
+    // //Edit Delete
+    // const btn = document.querySelectorAll('button');
+    // btn.forEach(element => {
+    //   element.addEventListener('click', pageNumber => {
+    //     pageNumber = page;
+
+    //     data
+    //       .slice((pageNumber - 1) * itemsPerPage, pageNumber * itemsPerPage)
+    //       .forEach(item => {
+    //         if (element.dataset.delete) {
+    //           if (item.id === element.dataset.delete) {
+    //             const index = data.indexOf(item);
+    //             if (index > -1) {
+    //               data.splice(index, 1);
+    //               renderTableElement(data, page);
+    //             }
+    //             // console.log(item)
+    //             // console.log(element.dataset.delete)
+    //           }
+    //         }
+    //       });
+    //     data.forEach(item => {
+    //       if (element.dataset.edit) {
+    //         if (item.id === element.dataset.edit) {
+    //           console.log(item);
+    //           // let category;
+    //           // document.querySelectorAll('#selectCategory > option').forEach(element => {
+    //           //     if (element.selected) category = element.value;
+    //           // });
+    //           // const activity = document.querySelector('#activity').value;
+    //           // const deadline = document.querySelector('#deadline').value.replace('T', ' ');
+    //           // data.forEach(element => {
+    //           //     element.category = category;
+    //           //     element.activity = activity;
+    //           //     element.deadline = deadline;
+    //           // })
+    //           // renderTableElement(data);
+    //         }
+    //       }
+    //     });
+    //   });
+    //   // renderTableElement(data);
+    // });
+};

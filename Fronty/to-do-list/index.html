@@ -49,12 +49,12 @@
                   id="todotext"
                   aria-describedby="basic-addon1"
                 />
-                <div class="input-group-prepend">
+                <div id="btnParent" class="input-group-prepend">
                   <button
                     class="btn btn-lightgeen p-0 m-0 rounded-right"
                     type="button"
                     id="addbtn"
-                    onclick="addItems(data)"
+                    onclick="addItems(data, page)"
                   >
                     <i class="fas fa-plus text-white px-3 font-size-25"></i>
                   </button>
@@ -106,18 +106,15 @@
                   <label for="deadline" class="cursor-pointer">Deadline</label>
                   <input
                     type="datetime-local"
-                    class="form-control text-center border-0"
+                    class="form-control border"
                     aria-describedby="basic-addon1"
                     id="deadline"
                     value=""
                   />
                 </div>
                 <div class="form-group p-0 m-1 m-md-0 border">
-                  <select id="selectCategory" class="form-control border-0">
+                  <select id="selectCategory" class="form-control">
                     <option selected>Choose category</option>
-                    <option>Work</option>
-                    <option>Sport</option>
-                    <option>University</option>
                   </select>
                 </div>
               </form>
@@ -130,14 +127,9 @@
               >
                 Close
               </button>
-              <button
-                type="button"
-                class="btn btn-orangered"
-                id="submit"
-                onclick="editItems()"
-              >
+              <!-- <button type="button" class="btn btn-orangered" id="submit">
                 Save changes
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -161,6 +153,27 @@
           <div class="bg-indigoblue text-white text-center mt-2">
             <h1 class="font-size-30 p-2">Filter by</h1>
           </div>
+          <!-- <div class="inputGroup1 rounded">
+            <input
+              id="option22"
+              name="option22"
+              type="checkbox"
+              value="All"
+              data-name="All"
+              checked
+            />
+            <label for="option22">All</label>
+          </div> -->
+          <!-- <div class="inputGroup rounded">
+            <input
+              id="options"
+              name="options"
+              type="checkbox"
+              value="All"
+              data-name="All"
+            />
+            <label for="option${index}">All</label>
+          </div> -->
           <form class="form" id="checkbox-parentTag"></form>
         </div>
 
@@ -228,6 +241,7 @@
             </thead>
             <tbody class="text-center" id="root"></tbody>
           </table>
+          <div id="pagination" class="row d-flex justify-content-center"></div>
         </div>
       </div>
     </main>

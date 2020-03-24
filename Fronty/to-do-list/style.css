@@ -12605,11 +12605,17 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   }
 }
 
+.rotateIcons {
+  -webkit-transform: rotate(180deg) !important;
+          transform: rotate(180deg) !important;
+}
+
 .text-line-through {
   text-decoration: line-through;
 }
 
-.inputGroup {
+.inputGroup,
+.inputGroup1 {
   background-color: #fff;
   display: block;
   margin: 10px 0;
@@ -12620,14 +12626,16 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   transition: 0.3s all ease-in-out;
 }
 
-.inputGroup:hover {
+.inputGroup:hover,
+.inputGroup1:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
-.inputGroup label {
+.inputGroup label,
+.inputGroup1 label {
   padding: 12px 30px;
   width: 100%;
   display: block;
@@ -12641,7 +12649,8 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   overflow: hidden;
 }
 
-.inputGroup label:before {
+.inputGroup label:before,
+.inputGroup1 label:before {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -12658,7 +12667,8 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   z-index: -1;
 }
 
-.inputGroup label:after {
+.inputGroup label:after,
+.inputGroup1 label:after {
   width: 32px;
   height: 32px;
   content: '';
@@ -12679,22 +12689,26 @@ a.text-lightgeen:hover, a.text-lightgeen:focus {
   transition: all 200ms ease-in;
 }
 
-.inputGroup input:checked ~ label {
+.inputGroup input:checked ~ label,
+.inputGroup1 input:checked ~ label {
   color: #fff;
 }
 
-.inputGroup input:checked ~ label:before {
+.inputGroup input:checked ~ label:before,
+.inputGroup1 input:checked ~ label:before {
   -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
           transform: translate(-50%, -50%) scale3d(56, 56, 1);
   opacity: 1;
 }
 
-.inputGroup input:checked ~ label:after {
+.inputGroup input:checked ~ label:after,
+.inputGroup1 input:checked ~ label:after {
   background-color: #54E0C7;
   border-color: #54E0C7;
 }
 
-.inputGroup input {
+.inputGroup input,
+.inputGroup1 input {
   width: 32px;
   height: 32px;
   -webkit-box-ordinal-group: 2;

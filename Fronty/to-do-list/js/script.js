@@ -15,35 +15,94 @@ const genId = () => {
     });
 };
 
+// --------------------------------------------------------------------------------------------------------------------------
 //All Data
-let data = [];
-let filterCategories = [{
-    name: 'Work',
-    value: 'Work',
-    status: false
-},
-{
-    name: 'Sport',
-    value: 'Sport',
-    status: false
-},
-{
-    name: 'Home',
-    value: 'Home',
-    status: false
-},
-{
-    name: 'University',
-    value: 'University',
-    status: false
-},
-{
-    name: 'Shop',
-    value: 'Shop',
-    status: false
-}
+let data = [
+
 ];
-// Render Select Categories
+
+let filterCategories = [
+    // { name: 'All', value: 'All', status: true },
+    { name: 'Work', value: 'Work', status: false },
+    { name: 'Sport', value: 'Sport', status: false },
+    { name: 'Home', value: 'Home', status: false },
+    { name: 'University', value: 'University', status: false },
+    { name: 'Shop', value: 'Shop', status: false }
+];
+// ---------------------------------------------------------------------------------------------------------------------
+//Local Storage 
+function saveTodos() {
+    var str = JSON.stringify(data);
+    localStorage.setItem("todos", str)
+}
+//get data from locale storage
+function getToDos() {
+    var str = localStorage.getItem("todos")
+    data = JSON.parse(str);
+    if (!data) {
+        data = [];
+    }
+}
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+let page = 1;
+let itemsPerPage = 5;
+// let totalPages = 3
+let totalPages = Math.ceil(data.length / itemsPerPage);
+
+
+//initialize todo app
+getToDos()
+renderTableElement(data, page);
+
+//Pagination 
+function handlePanginationClick(direction) {
+    page = direction === "next" ? page + 1 : page - 1;
+    renderTableElement(data, page);
+}
+// Render Pagination
+function renderPagination() {
+    const pagination = document.getElementById('pagination');
+    // Disable pagination buttons
+    let template = `
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination text-indigoblue">
+                      <button ${page === 1 ? 'disabled' : null} id="prev" class="btn page-item p-0">
+                        <a class="page-link" href="#">Previous</a>
+                      </button>
+                      <button class="btn page-item p-0">
+                        <a class="page-link font-weight-bold" href="#">${page}</a>
+                      </button>
+                      <button class="btn page-item p-0">
+                        <a class="page-link" href="#">of</a>
+                      </button>
+                      <button class="btn page-item p-0">
+                        <a class="page-link font-weight-bold" href="#">${totalPages}</a>
+                      </button>
+                      <button  ${page >= totalPages ? 'disabled' : null} id="next" class="btn page-item p-0">
+                        <a class="page-link" href="#">Next</a>
+                     </button>
+                    </ul>
+                  </nav>`;
+
+    pagination.innerHTML = template;
+    const nextPage = document.querySelector('#next').addEventListener('click', () => {
+        handlePanginationClick('next');
+    });
+    const prevPage = document.querySelector('#prev').addEventListener('click', () => {
+        handlePanginationClick('prev');
+    });
+};
+renderPagination(page);
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+//Render 
+
+//Render Categories
 const renderCategories = data => {
     const categories = document.getElementById('inputListCategory');
     const editcategories = document.getElementById('selectCategory');
@@ -75,63 +134,81 @@ const renderFilter = data => {
 };
 renderFilter(filterCategories);
 
-// function categoriesAllFalse() {
-//   filterCategories.forEach(element => {
-//     if (element.status === true) {
-//       console.log(element);
 
-//       return false;
-//     }
-//   });
-//   return true;
-// }
 
 
 //Render Table Elements
-const renderTableElement = (data) => {
+function renderTableElement(data, pageNumber) {
+    // Update totalPages after render elements
+    totalPages = Math.ceil(data.length / itemsPerPage);
+    // Update pagination after render elements
+    renderPagination(page);
     const root = document.querySelector('#root');
     if (data.length !== 0) {
         let template = '';
+        let count = itemsPerPage;
+        let filteredData = [];
         data.forEach(element => {
-            if (filterCategories.find(item => item.name === element.category).status === true) {
-                template += `
-                       <tr class="shadow-sm" id="tr">
-                          <th scope="row" class='text-info'>#</th>
-                          <th scope="row"><i class="far fa-check-circle cursor-pointer  ${element.completed ? 'text-success' : 'text-orangered'}" onclick="completedStatus('${element.id}')"></i></th>
-                       <td class='${element.completed ? 'font-weight-bold text-muted' : 'font-weight-bold'}'>${element.category}</td>
-                       <td class='${element.completed ? 'text-line-through font-weight-bold text-muted' : 'text-dark activityText'}'>${element.activity}</td>
-                       <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.createdDate}</td>
-                       <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.deadline}</td>
-                       <td class="text-secondary">
-                       <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal">
-                           <i class="far fa-edit"></i>
-                       </button>
-                       </td>
-                       <td class="text-danger" id="btn-group">
-                       <button class="btn p-0 m-0 trashbtn"  onclick="deleteItems('${element.id}')">
-                           <i class="far fa-trash-alt text-orangered"></i>
-                       </button>
-                       </td>
-                   </tr>
-                       `;
+            if (filterCategories.find(item => item.name === element.category).status === true || filterCategories.filter(item => item.status === false).length === 5) {
+                filteredData.push(element);
             }
         });
+        filteredData.slice((pageNumber - 1) * itemsPerPage, pageNumber * itemsPerPage).forEach(element => {
+            if (count === 0) {
+                return;
+            }
+            count--;
+            template += `
+                       <tr class="shadow-sm">
+                          <th scope="row" class='text-info'>#</th>
+                          <th scope="row">
+                           <i class="far fa-check-circle cursor-pointer  ${element.completed ? 'text-success' : 'text-orangered'}" onclick="completedStatus('${element.id}')"></i></th>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'font-weight-bold'}'>${element.category}</td>
+                          <td class='${element.completed ? 'text-line-through font-weight-bold text-muted' : 'text-dark activityText'}'>${element.activity}</td>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.createdDate}</td>
+                          <td class='${element.completed ? 'font-weight-bold text-muted' : 'text-info font-weight-bold'}'>${element.deadline}</td>
+                          <td class="text-secondary">
+                            <button class="btn p-0 m-0" data-toggle="modal" data-target="#exampleModal" id='editbtn'>
+                            <i class="far fa-edit"></i>
+                            </button>
+                          </td>
+                          <td class="text-danger" id="btn-group">
+                            <button class="btn p-0 m-0 trashbtn"  onclick="deleteItems('${element.id}', ${pageNumber})">
+                              <i class="far fa-trash-alt text-orangered"></i>
+                            </button>
+                          </td>
+                      </tr>
+                       `;
+        });
         root.innerHTML = template;
+
     } else {
         root.innerHTML = '';
     }
 };
 
+renderTableElement(data, page);
+
+
+// document.getElementById('submit').addEventListener('click', function () {
+//     console.log('dsds')
+// })
+
+//filterCheck
+function filterCheck(category) {
+    return filterCategories.find(item => item.name === category)
+}
 
 //FilterStatusToggler
 const filterTogglerstatus = document
     .querySelectorAll('.inputGroup > input')
     .forEach(element => {
         element.addEventListener('click', () => {
+            // const allElements = document.getElementById('option22');
+            // allElements.removeAttribute('checked');
             const name = element.dataset.name;
-            // if (status) {
-            //     element.setAttribute('checked', false);
-            // }
+            console.log(filterCategories)
+            // console.log(name)
             filterCategories.forEach(element => {
                 if (element.name === name) {
                     if (!element.status) {
@@ -140,52 +217,50 @@ const filterTogglerstatus = document
                         element.status = false;
                     }
                 }
-                renderTableElement(data);
+                renderTableElement(data, page);
             });
-            console.log(filterCategories)
+            // console.log(filterCategories);
         });
     });
 
+// ------------------------------------------------------------------------------------------------------------------------
+
 //Sort Items
-const sortItems = (data) => {
+const sortItems = data => {
     let categoriesSort = false;
     document.querySelectorAll('#sort-category button').forEach(element => {
         element.addEventListener('click', () => {
-            console.log(element.value)
+            console.log(element.value);
             const activity = element.dataset.activity;
             const categories = element.dataset.category;
             const created = element.dataset.created;
             const deadLine = element.dataset.deadline;
-            // console.log(element.name)
 
             //Sort by Category
             if (element.value === categories) {
                 if (!categoriesSort) {
-                    console.log('sadsads')
+                    console.log('sadsads');
                     categoriesSort = true;
                     data.sort(function (a, b) {
                         let nameA = a.category.toLowerCase(),
                             nameB = b.category.toLowerCase();
-                        console.log(nameA)
-                        if (nameA < nameB)
-                            return -1
-                        if (nameA > nameB)
-                            return 1
+                        console.log(nameA);
+                        if (nameA < nameB) return -1;
+                        if (nameA > nameB) return 1;
                         return 0;
                     });
                 } else {
                     categoriesSort = false;
-                    data.sort(function (a, b) {
-                        let nameA = a.category.toLowerCase(),
-                            nameB = b.category.toLowerCase()
-                        if (nameA < nameB)
-                            return -1
-                        if (nameA > nameB)
-                            return 1
-                        return 0;
-                    }).reverse();
+                    data
+                        .sort(function (a, b) {
+                            let nameA = a.category.toLowerCase(),
+                                nameB = b.category.toLowerCase();
+                            if (nameA < nameB) return -1;
+                            if (nameA > nameB) return 1;
+                            return 0;
+                        })
+                        .reverse();
                 }
-                // renderTableElement(data);
             }
             // Sort by Activity
             else if (element.value === activity) {
@@ -194,23 +269,21 @@ const sortItems = (data) => {
                     data.sort(function (a, b) {
                         let nameA = a.activity.toLowerCase(),
                             nameB = b.activity.toLowerCase();
-                        if (nameA < nameB)
-                            return -1
-                        if (nameA > nameB)
-                            return 1
+                        if (nameA < nameB) return -1;
+                        if (nameA > nameB) return 1;
                         return 0;
                     });
                 } else {
                     categoriesSort = false;
-                    data.sort(function (a, b) {
-                        let nameA = a.activity.toLowerCase(),
-                            nameB = b.activity.toLowerCase();
-                        if (nameA < nameB)
-                            return -1
-                        if (nameA > nameB)
-                            return 1
-                        return 0;
-                    }).reverse();
+                    data
+                        .sort(function (a, b) {
+                            let nameA = a.activity.toLowerCase(),
+                                nameB = b.activity.toLowerCase();
+                            if (nameA < nameB) return -1;
+                            if (nameA > nameB) return 1;
+                            return 0;
+                        })
+                        .reverse();
                 }
             }
             //Sort by DeadLine
@@ -224,11 +297,13 @@ const sortItems = (data) => {
                     });
                 } else {
                     categoriesSort = false;
-                    data.sort(function (a, b) {
-                        let dateA = new Date(a.deadline),
-                            dateB = new Date(b.deadline);
-                        return dateA - dateB;
-                    }).reverse();
+                    data
+                        .sort(function (a, b) {
+                            let dateA = new Date(a.deadline),
+                                dateB = new Date(b.deadline);
+                            return dateA - dateB;
+                        })
+                        .reverse();
                 }
             }
             //Sort by Created ate
@@ -242,59 +317,42 @@ const sortItems = (data) => {
                     });
                 } else {
                     categoriesSort = false;
-                    data.sort(function (a, b) {
-                        let dateA = new Date(a.createdDate),
-                            dateB = new Date(b.createdDate);
-                        return dateA - dateB;
-                    }).reverse();
+                    data
+                        .sort(function (a, b) {
+                            let dateA = new Date(a.createdDate),
+                                dateB = new Date(b.createdDate);
+                            return dateA - dateB;
+                        })
+                        .reverse();
                 }
             }
-            renderTableElement(data);
-        })
-    })
-}
-sortItems(data)
+            renderTableElement(data, page);
+        });
+    });
+};
+sortItems(data);
 
-// const editItems = () => {
-//     let category;
-//     document.querySelectorAll('#selectCategory > option').forEach(element => {
-//         if (element.selected) category = element.value;
-//     });
-//     const activity = document.querySelector('#activity').value;
-//     const deadline = document.querySelector('#deadline').value.replace('T', ' ');
 
-//     data.forEach(element => {
-//         if (element.id) {
-//             data.push({
-//                 category,
-//                 activity,
-//                 deadline
-//             });
-//         }
-//     });
-// };
-// const filters = {
-//     searchText: ''
-// };
-
+// -----------------------------------------------------------------------------------------------------------------
 // live - Search
 let term = '';
 const liveSearch = (items, term) => {
     if (term === 0) {
-        renderTableElement(items)
+        renderTableElement(items, page);
     }
     let filteredItems = items.filter(item => {
         return item.activity.toLowerCase().indexOf(term.toLowerCase()) > -1;
-    })
-    renderTableElement(filteredItems)
-}
-document.querySelector('#searchPanel').addEventListener('input', (e) => {
+    });
+    renderTableElement(filteredItems, page);
+};
+document.querySelector('#searchPanel').addEventListener('input', e => {
     term = e.target.value;
     liveSearch(data, term);
 });
 
+// --------------------------------------------------------------------------------------------------------------------
 //Add Items to Data
-const addItems = data => {
+const addItems = (data, pageNumber) => {
     const category = selectedCategory();
     const activity = document.querySelector('#todotext').value;
     const deadline = document
@@ -312,12 +370,15 @@ const addItems = data => {
         activity,
         category,
         deadline,
-        createdDate
+        createdDate,
+        status: false,
     });
-
-    // console.log(data);
-    renderTableElement(data);
+    saveTodos(data);
+    console.log(data);
+    renderTableElement(data, pageNumber);
 };
+
+// -----------------------------------------------------------------------------------------------------------------------------
 // Select Category
 const selectedCategory = () => {
     let category;
@@ -326,23 +387,21 @@ const selectedCategory = () => {
     });
     return category;
 };
-const deleteItems = id => {
-    // const index = data.findIndex(el => el.id === id);
-    // const before = data.slice(0, index);
-    // const after = data.slice(index + 1);
-    // const newArray = [...before, ...after];
-    // if (index > -1) {
-    //     renderTableElement(newArray);
-    // };
+
+//Delete Items
+const deleteItems = (id, pageNumber) => {
     const index = data.findIndex(el => el.id === id);
     if (index > -1) {
         data.splice(index, 1);
-        renderTableElement(data);
+        renderPagination(page);
+        renderTableElement(data, pageNumber);
+        saveTodos(data);
+
     }
 };
 // completedStatus
 const completedStatus = id => {
-    console.log(id);
+    // console.log(id);
     data.forEach(element => {
         if (element.id === id) {
             if (!element.completed) {
@@ -352,6 +411,14 @@ const completedStatus = id => {
             }
         }
     });
-
-    renderTableElement(data);
+    renderTableElement(data, page);
 };
+
+
+
+
+
+
+
+
+
